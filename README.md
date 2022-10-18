@@ -5,6 +5,11 @@ Author - ic-myXMB
 
 Notice: This project is submitted and shared "AS IS" in the hopes that folks may find it of some use and hopefully see it as a starting point to continue on with further and improve upon.
 
+Description: 
+
+Simple 100px by 100px user avatar image upload in php and mysqli with Bootstrap 5 basic examples.
+
+
 Previews:
 
 https://github.com/ic-myXMB/Bootstrap-5-Basic_Image-Uploads_PHP_Mysql/tree/main/BS5-Basic-User-Image-Upload/Previews
