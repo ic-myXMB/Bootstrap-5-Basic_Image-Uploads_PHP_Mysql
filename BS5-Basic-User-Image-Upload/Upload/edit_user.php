@@ -39,7 +39,7 @@
                           // While
                           while ($row = mysqli_fetch_assoc($result)) {
 
-                          	 // User Image
+                             // User Image
                              $user_image = $row['user_image'];
 
                            }
@@ -48,7 +48,7 @@
                           // If edit user button
                           if (isset($_POST['btn_edit_user'])) {
 
-                          	// File Upload
+                            // File Upload
                             $User_Image = $_FILES['user_image']['name'];
                             $User_Temp = $_FILES['user_image']['tmp_name'];                          
  
@@ -71,13 +71,13 @@
                               $sql = "UPDATE `users` SET user_image = '$user_image' WHERE user_id = '$User_ID'";
                               $result = mysqli_query($mysqli, $sql);
 
+                              // Echo
                               echo '<div class="alert alert-success">Edit success.</div>';
 
 	                          // Echo
 	                          echo '<div class="alert alert-warning">No upload file was selected thus the Old image was retained.</div>'; 
 
 		                      // Redirect
-
 		                      header("Refresh:2; url= edit_user.php", true, 303);	                                                        
 
                             }
@@ -123,6 +123,7 @@
                                          // If so, echo a no go notice
                                          echo '<div class="alert alert-warning">The image size is smaller than is allowed! Please upload an image 100px by 100px in size.</div>';
 
+                                         // Echo
                                          echo '<div class="alert alert-danger">Upload Failed: Old image retained.</div>';
 
                                          // Show old image
@@ -137,6 +138,7 @@
                                          // If so, echo a no go notice
                                          echo '<div class="alert alert-warning">The image size is larger than is allowed! Please upload an image 100px by 100px in size.</div>';
 
+                                         // Echo
                                          echo '<div class="alert alert-danger">Upload Failed: Old image retained.</div>';
 
                                          // Show old image
@@ -148,11 +150,11 @@
                                         if ($width == $max_width || $height == $max_height) {
 	                                      // if so, do the upload
 
-                                          // If is an uploaded file
+	                                      // If is an uploaded file
 	                                      if (is_uploaded_file($user_image["tmp_name"])) {
 
 	                                   	     // Unlink Old Image
-                                             unlink("avatars/$old"); 
+	                                   	     unlink("avatars/$old"); 
 
 		                                     // If so, rename said file
 		                                     $temp = explode(".", $user_image["name"]);
@@ -167,7 +169,7 @@
 		                                     // If so, move upload file or die
 		                                     move_uploaded_file($user_image["tmp_name"], "$file_dir/$user_avatar"); 
 
-	                                         // If so, is an image file so echo image uploaded success notice
+		                                     // If so, is an image file so echo image uploaded success notice
 		                                     echo '<div class="alert alert-primary">The image file was uploaded!</div><br/>';
 
 		                                    }
@@ -184,7 +186,6 @@
 		                                 echo '<div class="alert alert-success">Edit User Success!</div>';
 
 		                                 // Redirect
-
 		                                 header("Refresh:2; url= edit_user.php", true, 303);
 
 		                                }
