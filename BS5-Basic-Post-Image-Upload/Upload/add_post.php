@@ -16,7 +16,7 @@
                 <!-- Breadrcrumbs -->
                 <ol class="breadcrumb mb-4">
                      <li class="breadcrumb-item"><i class="fa-solid fa-dashboard"></i> <a href="index.html">Dashboard</a></li>
-                     <li class="breadcrumb-item active"><i class="fa-solid fa-file-plus"></i> Add Post</li>
+                     <li class="breadcrumb-item active"><i class="fa-solid fa-file-edit"></i> Add Post</li>
                 </ol>
                 <?php
                     // connect to database
@@ -187,7 +187,7 @@
                 <!-- Card Add Post -->
                 <div class="card mb-4">
                     <div class="card-body">
-                         <h5 class="card-title border-bottom pb-3"><i class="fa-solid fa-file-plus"></i> Add Post</h5> 
+                         <h5 class="card-title border-bottom pb-3"><i class="fa-solid fa-file-edit"></i> Add Post</h5> 
                             <!-- Add Post Post Image -->
                             <form action="" method="POST" enctype="multipart/form-data">
                                 <div class="mb-3">
