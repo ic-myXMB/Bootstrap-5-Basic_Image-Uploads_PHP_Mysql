@@ -51,7 +51,7 @@ Where:
 
 
 
-Next step is to install the db tables. Use your sql managaer like PHPMyAdmin
+Next step is to install the db tables. Use your sql manager cp for your localhost like PHPMyAdmin
 
 Run sql queries on your test database:
    
