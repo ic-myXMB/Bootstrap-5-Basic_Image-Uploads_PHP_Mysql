@@ -146,7 +146,7 @@
 
                                         }
     
-	                                    // if width & height is equal to allowed 100x100 then such is allowed
+                                        // if width & height is equal to allowed 100x100 then such is allowed
                                         if ($width == $max_width || $height == $max_height) {
 	                                      // if so, do the upload
 
@@ -182,7 +182,7 @@
                                          // user image is user avatar
                                          $user_image = $user_avatar;
 
-	                                     // If so, is an image file so echo image uploaded success notice
+		                                 // If so, is an image file so echo image uploaded success notice
 		                                 echo '<div class="alert alert-success">Edit User Success!</div>';
 
 		                                 // Redirect
@@ -196,7 +196,7 @@
 	                                 echo '<div class="alert alert-warning">Upload File is not an image type. Only upload JPG or JPEG or GIF or PNG file types.</div>';
 
 	                                 // Show old image
-                                     $user_image = $old;
+	                                 $user_image = $old;
 
 	                                 // Echo
 	                                 echo '<div class="alert alert-danger">Upload Failed: Old image retained.</div>';	        	    
