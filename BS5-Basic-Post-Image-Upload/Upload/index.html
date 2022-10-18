@@ -28,8 +28,8 @@
                        <h5 class="card-title border-bottom pb-3"><i class="fa-solid fa-binoculars"></i> View Examples</h5> 
                        <!-- list -->
                        <ul class="list-group">
-                         <li class="list-group-item"><a href="add_user.php" style="text-decoration: none;"><i class="fa-solid fa-add m-2"></i> add user</a></li>
-                         <li class="list-group-item"><a href="edit_user.php" style="text-decoration: none;"><i class="fa-solid fa-edit m-2"></i> edit user</a></li>
+                         <li class="list-group-item"><a href="add_post.php" style="text-decoration: none;"><i class="fa-solid fa-add m-2"></i> add post</a></li>
+                         <li class="list-group-item"><a href="edit_post.php" style="text-decoration: none;"><i class="fa-solid fa-edit m-2"></i> edit post</a></li>
                        </ul>
                   </div>
                 </div>
@@ -39,7 +39,7 @@
                        <h5 class="card-title border-bottom pb-3"><i class="fa-solid fa-file-lines"></i> Description</h5> 
                        <!-- list -->
                        <div class="card-text">
-                       	<div class="alert alert-secondary m-1 mb-2 mt-2"><i class="fa-solid fa-exclamation-circle m-2"></i> Simple 100px by 100px user avatar image upload in php and mysqli with Bootstrap 5 basic examples.</div>
+                       	<div class="alert alert-secondary m-1 mb-2 mt-2"><i class="fa-solid fa-exclamation-circle m-2"></i> Simple 850px by 350px user post avatar image upload in php and mysqli with Bootstrap 5 basic examples.</div>
                        </div>
                   </div>
                 </div>                
@@ -55,12 +55,12 @@
                        	<!-- Code Snippet -->
 <pre class="m-1 mb-2 mt-2">
 <code class="language-sql">
-CREATE TABLE IF NOT EXISTS `users` (
-`user_id` INT(11) PRIMARY KEY AUTO_INCREMENT,
-`user_image` TEXT NOT NULL
+CREATE TABLE IF NOT EXISTS `posts` (
+`post_id` INT(11) PRIMARY KEY AUTO_INCREMENT,
+`post_image` TEXT NOT NULL
 );
 
-INSERT INTO `users` VALUES('1', '1666010180.gif');</code>
+INSERT INTO `posts` VALUES('1', '1666061875.jpg');</code>
 </pre>
                        	<div class="alert alert-warning m-1 mb-2 mt-2"><i class="fa-solid fa-exclamation-circle m-2"></i> In example connection file: db.php find and edit the db connections.</div>
                        	<h6 class="fw-bold text-secondary mb-1 mt-3">Code:</h6>
@@ -75,8 +75,8 @@ $mysqli = mysqli_connect('localhost', 'db_user', 'db_password', 'db_name');</cod
                        <h5 class="card-title border-bottom pb-3"><i class="fa-solid fa-binoculars m-1"></i> View Examples</h5> 
                        <!-- list -->
                        <ul class="list-group m-1">
-                         <li class="list-group-item"><a href="add_user.php" style="text-decoration: none;"><i class="fa-solid fa-add m-2"></i> add user</a></li>
-                         <li class="list-group-item"><a href="edit_user.php" style="text-decoration: none;"><i class="fa-solid fa-edit m-2"></i> edit user</a></li>
+                         <li class="list-group-item"><a href="add_post.php" style="text-decoration: none;"><i class="fa-solid fa-add m-2"></i> add post</a></li>
+                         <li class="list-group-item"><a href="edit_post.php" style="text-decoration: none;"><i class="fa-solid fa-edit m-2"></i> edit post</a></li>
                        </ul>
                        </div>
                   </div>
@@ -87,7 +87,7 @@ $mysqli = mysqli_connect('localhost', 'db_user', 'db_password', 'db_name');</cod
                        <h5 class="card-title border-bottom pb-3"><i class="fa-solid fa-link"></i> Project Links</h5> 
                        <!-- list -->
                        <ul class="list-group">
-                         <li class="list-group-item"><a href="https://github.com/ic-myXMB/Bootstrap-5-Basic_Image-Uploads_PHP_Mysql/tree/main/BS5-Basic-User-Image-Upload" class="text-secondary" style="text-decoration: none;"target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github text-secondary m-2"></i> Project Github</a></li>
+                         <li class="list-group-item"><a href="https://github.com/ic-myXMB/Bootstrap-5-Basic_Image-Uploads_PHP_Mysql/tree/main/BS5-Basic-Post-Image-Upload" class="text-secondary" style="text-decoration: none;"target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github text-secondary m-2"></i> Project Github</a></li>
                          <li class="list-group-item"><a href="#license_modal" data-bs-toggle="modal" data-bs-target="#license_Modal" class="text-secondary" style="text-decoration: none;"><i class="fa-solid fa-info-circle text-secondary m-2"></i> Project License</a></li>
                        </ul>
                   </div>

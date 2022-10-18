@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS `posts` (
+`post_id` INT(11) PRIMARY KEY AUTO_INCREMENT,
+`post_image` TEXT NOT NULL
+);
+
+INSERT INTO `posts` VALUES('1', '1666061875.jpg');
