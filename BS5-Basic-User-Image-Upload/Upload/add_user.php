@@ -75,8 +75,8 @@
                          // Echo
                          echo '<div class="alert alert-success">Edit success.</div>';
 
-	                     // Then redirect to the users edit user page
-	                     header("Refresh:1; url= add_user.php", true, 303);
+                         // Then redirect to the users edit user page
+                         header("Refresh:1; url= add_user.php", true, 303);
 	                                                   
                         }                        
 
@@ -145,7 +145,7 @@
 		                                 // If so, move upload file or die
 		                                 move_uploaded_file($user_image["tmp_name"], "$file_dir/$user_avatar"); 
 
-	                                     // If so, is an image file so echo image uploaded success notice
+		                                 // If so, is an image file so echo image uploaded success notice
 		                                 echo '<div class="alert alert-primary">The image file was uploaded!</div><br/>';
 
 		                                }
