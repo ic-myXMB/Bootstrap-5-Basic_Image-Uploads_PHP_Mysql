@@ -2,6 +2,18 @@
 Bootstrap 5 Basic Image Upload with PHP and Mysql:
 
 
+Tools Used for this project:
+
+
+SublimeText (code editor):
+
+https://www.sublimetext.com
+
+Bitnami MAMP Stack (localhost dev):
+
+https://bitnami.com/stack/mamp/installer
+
+
 Bootstrap 5 Basic User Avatar Image Upload with PHP and Mysql
 
 Author - ic-myXMB
