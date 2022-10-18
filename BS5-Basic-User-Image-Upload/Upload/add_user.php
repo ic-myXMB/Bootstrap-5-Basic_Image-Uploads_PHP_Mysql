@@ -40,7 +40,7 @@
                          $user_image = $_FILES['user_image']['name'];
                          $user_temp = $_FILES['user_image']['tmp_name']; 
 
-                         // If image empty on upload
+                        // If image empty on upload
                         if (empty($user_image)) {
 
                          // Default avatar image locale
@@ -70,13 +70,14 @@
                          $result = mysqli_query($mysqli, $sql); 
 
                          // Get the id of last insert
-		                 $user_id = mysqli_insert_id($mysqli);
+                         $user_id = mysqli_insert_id($mysqli);
 
                          // Echo
                          echo '<div class="alert alert-success">Edit success.</div>';
 
 	                     // Then redirect to the users edit user page
-	                     header("Refresh:1; url= add_user.php", true, 303);                              
+	                     header("Refresh:1; url= add_user.php", true, 303);
+	                                                   
                         }                        
 
                         // If is uploaded file
@@ -158,7 +159,7 @@
 		                                 $user_id = mysqli_insert_id($mysqli);
 
 	                                     // If so, is an image file so echo image uploaded success notice
-		                                 echo '<div class="alert alert-success">Add User Success!</div>';
+	                                     echo '<div class="alert alert-success">Add User Success!</div>';
 
 	                                     // If so, then redirect to the users edit user page
 	                                     header("Refresh:1; url= add_user.php", true, 303);
