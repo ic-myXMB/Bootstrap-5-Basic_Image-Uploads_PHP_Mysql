@@ -1,0 +1,6 @@
+CREATE TABLE IF NOT EXISTS `users` (
+`user_id` INT(11) PRIMARY KEY AUTO_INCREMENT,
+`user_image` TEXT NOT NULL
+);
+
+INSERT INTO `users` VALUES('1', '1666010180.gif');
