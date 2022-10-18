@@ -61,6 +61,11 @@ Run sql queries on your test database:
 
     INSERT INTO `users` VALUES('1', '1666010180.gif');
 
+* Such query can also be found in and copied from a file if needed: 
+
+https://github.com/ic-myXMB/Bootstrap-5-Basic_Image-Uploads_PHP_Mysql/blob/main/BS5-Basic-User-Image-Upload/db.sql
+
+
 
 Final step is to visit the index.html file for this project on your localhost so as to allow you to visit the example pages link from such and thus begin editing, improving and developing on such project base further.
 
