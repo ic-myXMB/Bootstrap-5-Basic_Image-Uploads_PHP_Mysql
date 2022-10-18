@@ -210,7 +210,7 @@
                         }
                 ?>
                 <!-- Card Edit User -->
-                <div class="card">
+                <div class="card mb-4">
                   <div class="card-body">
                        <h5 class="card-title border-bottom pb-3"><i class="fa-solid fa-user-edit"></i> Edit User</h5>  	
                        <!-- Edit User Form -->

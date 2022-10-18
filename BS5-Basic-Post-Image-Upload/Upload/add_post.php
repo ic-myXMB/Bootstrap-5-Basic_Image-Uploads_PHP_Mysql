@@ -185,7 +185,7 @@
                     }
                 ?>                  
                 <!-- Card Add Post -->
-                <div class="card">
+                <div class="card mb-4">
                     <div class="card-body">
                          <h5 class="card-title border-bottom pb-3"><i class="fa-solid fa-file-plus"></i> Add Post</h5> 
                             <!-- Add Post Post Image -->
