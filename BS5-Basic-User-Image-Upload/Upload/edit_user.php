@@ -158,10 +158,10 @@
 		                                     $temp = explode(".", $user_image["name"]);
 
 		                                     // If so, do new file name
-		                                     $newfilename = round(microtime(true)) . '.' . end($temp);
+		                                     $new_filename = round(microtime(true)) . '.' . end($temp);
 
 		                                     // If so, display the uploaded image file
-		                                     $avatar_image = $newfilename; 
+		                                     $avatar_image = $new_filename; 
 		                                     $user_avatar = $avatar_image;
 
 		                                     // If so, move upload file or die

@@ -53,16 +53,16 @@
                          $temp = explode(".", $default_avatar_name);
 
                          // Then, do new file name
-                         $newfilename = round(microtime(true)) . '.' . end($temp);
+                         $new_filename = round(microtime(true)) . '.' . end($temp);
 
                          // Avatar image is new file name
-                         $avatar_image = "$file_dir/".$newfilename;
+                         $avatar_image = "$file_dir/".$new_filename;
 
                          // Copy default avatar image to avatar image
                          copy($default_avatar, $avatar_image);	
 
                          // User avatar is new file name
-                         $user_avatar = $newfilename;
+                         $user_avatar = $new_filename;
 
                          // Query Insert    
                          $sql = "INSERT INTO `users` (user_image) VALUES('$user_avatar')";
@@ -135,10 +135,10 @@
 		                                 $temp = explode(".", $user_image["name"]);
 
 		                                 // If so, do new file name
-		                                 $newfilename = round(microtime(true)) . '.' . end($temp);
+		                                 $new_filename = round(microtime(true)) . '.' . end($temp);
 
 		                                 // If so, display the uploaded image file
-		                                 $avatar_image = $newfilename; 
+		                                 $avatar_image = $new_filename; 
 		                                 $user_avatar = $avatar_image;
 
 		                                 // If so, move upload file or die
