@@ -19,7 +19,6 @@
                      <li class="breadcrumb-item active"><i class="fa-solid fa-user-plus"></i> Add User</li>
                 </ol>
                 <?php
-
                     // connect to database
                     // include db connect 
                     include("db.php");
@@ -177,14 +176,13 @@
 	                                 // Redirect back to the add user form
 	                                 header("Refresh:1; url= add_user.php", true, 303);	        	    
 
-	                                }
+	                            }
 
                             }  
 
                         }
 
                     }
-
                 ?>                  
                 <!-- Card Add User -->
                 <div class="card">
