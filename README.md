@@ -14,7 +14,8 @@ Bitnami MAMP Stack (localhost dev):
 https://bitnami.com/stack/mamp/installer
 
 
-Bootstrap 5 Basic User Avatar Image Upload with PHP and Mysql
+
+Bootstrap 5 Basic User Avatar Image Upload with PHP and Mysql:
 
 Author - ic-myXMB
 
@@ -90,7 +91,7 @@ That is it! Simple enough, right?! Hopefully you may find such of interest or us
 
 
 
-Bootstrap 5 Basic Post Post Image Upload with PHP and Mysql
+Bootstrap 5 Basic Post Post Image Upload with PHP and Mysql:
 
 Author - ic-myXMB
 
