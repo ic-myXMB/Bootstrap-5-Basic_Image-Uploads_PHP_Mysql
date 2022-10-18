@@ -124,11 +124,11 @@
 
                                     }
     
-	                                // if width & height is equal to allowed 100x100 then such is allowed
+                                    // if width & height is equal to allowed 100x100 then such is allowed
                                     if ($width == $max_width || $height == $max_height) {
 	                                   // if so, do the upload
 
-                                       // If is an uploaded file
+	                                   // If is an uploaded file
 	                                   if (is_uploaded_file($user_image["tmp_name"])) {
 
 		                                 // If so, rename said file
