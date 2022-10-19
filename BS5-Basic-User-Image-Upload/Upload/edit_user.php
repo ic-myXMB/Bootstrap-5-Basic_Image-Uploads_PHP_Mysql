@@ -29,7 +29,7 @@
                     // Define upload file directory
                     $file_dir = "users";
 
-                         // Define as user id 1 form demo
+                         // Define as user id '1' - form demo
                          $User_ID = '1';
 
                          // Query Select
