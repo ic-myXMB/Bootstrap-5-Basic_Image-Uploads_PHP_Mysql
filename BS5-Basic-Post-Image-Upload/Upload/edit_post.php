@@ -29,8 +29,8 @@
                     // Define upload file directory
                     $file_dir = "posts";
 
-                         // Define as post id 1 form demo
-                         $Post_ID = 1;
+                         // Define as post id '1' - form demo
+                         $Post_ID = '1';
 
                          // Query Select
                          $sql = "SELECT * FROM `posts` WHERE post_id = '$Post_ID'";
