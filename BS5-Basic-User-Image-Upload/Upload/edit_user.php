@@ -5,9 +5,9 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
            <title></title>
            <!-- CSS Files -->
-           <!-- Bootstrap -->  
+           <!-- Bootstrap CSS -->  
            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
-           <!-- Font Awesome -->
+           <!-- Font Awesome CSS -->
            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />   
       </head>  
       <body>  
@@ -19,18 +19,18 @@
                      <li class="breadcrumb-item active"><i class="fa-solid fa-user-edit"></i> Edit User</li>
                 </ol> 
                 <?php
-                    // connect to database
-                    // include db connect
+                    // Connect to database
+                    // Include db connect
                     include("db.php");
 
-                    // do DB Func
+                    // Do DB Func
                     doDB();
 
-                    // define upload file directory
+                    // Define upload file directory
                     $file_dir = "users";
 
                          // Define as user id 1 form demo
-                         $User_ID = 1;
+                         $User_ID = '1';
 
                          // Query Select
                          $sql = "SELECT * FROM `users` WHERE user_id = '$User_ID'";
@@ -82,7 +82,6 @@
 
                             }
 
-
                             // If is uploaded file
                             if (is_uploaded_file($User_Temp)) {
 
@@ -110,11 +109,11 @@
 
                                    // If such file is an image file type
                                    if ($ext == "jpg" OR $ext == "jpeg" OR $ext == "gif" OR $ext == "png") {	
-                                     // if so, also display image dimension infos
+                                     // If so, also display image dimension infos
 
                                      // Allowed max width & height
-                                     $max_width = 100; // allowed width
-                                     $max_height = 100; // allowed height
+                                     $max_width = 100; // Allowed width
+                                     $max_height = 100; // Allowed height
 
                                        // If width & height is less than allowed 100x100 then such is not allowed
                                        if ($width < $max_width || $height < $max_height) {
@@ -133,7 +132,7 @@
 
                                        // If width & height is greater than allowed 100x100 then such is not allowed
                                        if ($width > $max_width || $height > $max_height) {
-                                          // if so, cancel the upload
+                                          // If so, cancel the upload
 
                                          // If so, echo a no go notice
                                          echo '<div class="alert alert-warning">The image size is larger than is allowed! Please upload an image 100px by 100px in size.</div>';
@@ -146,9 +145,9 @@
 
                                         }
     
-                                        // if width & height is equal to allowed 100x100 then such is allowed
+                                        // If width & height is equal to allowed 100x100 then such is allowed
                                         if ($width == $max_width || $height == $max_height) {
-	                                      // if so, do the upload
+	                                      // If so, do the upload
 
 	                                      // If is an uploaded file
 	                                      if (is_uploaded_file($user_image["tmp_name"])) {
@@ -176,10 +175,9 @@
 
                                          // Query Update
                                          $sql = "UPDATE `users` SET user_image = '$user_avatar' WHERE user_id = '$User_ID'";
-
                                          $result = mysqli_query($mysqli, $sql);
 
-                                         // user image is user avatar
+                                         // User image is user avatar
                                          $user_image = $user_avatar;
 
 		                                 // If so, is an image file so echo image uploaded success notice
@@ -209,17 +207,17 @@
 
                         }
                 ?>
-                <!-- Card Edit User -->
+                <!-- Card: Edit User -->
                 <div class="card mb-4">
                   <div class="card-body">
                        <h5 class="card-title border-bottom pb-3"><i class="fa-solid fa-user-edit"></i> Edit User</h5>  	
-                       <!-- Edit User Form -->
+                       <!-- Edit User: Form -->
                        <form action="" method="POST" enctype="multipart/form-data">
                             <div class="mb-3">
                                  <label class="mb-3"> User Image: </label>
                                  <br />
                                  <img height="150" width="150" class="img-responsive img-thumbnail mb-3" src="<?php echo $file_dir;?>/<?php echo $user_image; ?>">
-                                 <div class="alert alert-warning mb-3">Upload must be an image & be 100px by 100px in size.</div>                       
+                                 <div class="alert alert-warning mb-3">Upload must be an image & be 100px by 100px in size.</div>                
                                      <input type="file" name="user_image" class="form-control">
                                  </div>                              
                                  <div class="mb-3">
@@ -229,11 +227,11 @@
                         </form>
                   </div>
                 </div>
-           </div>  <!-- ./ end container -->
+           </div>  <!-- ./ End Container -->
            <!-- JS Files -->
-           <!-- JQuery -->
+           <!-- JQuery JS -->
            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
-           <!-- Bootstrap -->
+           <!-- Bootstrap JS -->
            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script> 
       </body>  
  </html>  

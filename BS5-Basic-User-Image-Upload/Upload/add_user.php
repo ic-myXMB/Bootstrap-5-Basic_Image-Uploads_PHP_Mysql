@@ -13,17 +13,17 @@
       <body>  
            <!-- Container -->
            <div class="container mt-5">
-                <!-- Breadrcrumbs -->
+                <!-- Breadrcrumb -->
                 <ol class="breadcrumb mb-4">
                      <li class="breadcrumb-item"><i class="fa-solid fa-dashboard"></i> <a href="index.html">Dashboard</a></li>
                      <li class="breadcrumb-item active"><i class="fa-solid fa-user-plus"></i> Add User</li>
                 </ol>
                 <?php
-                    // connect to database
-                    // include db connect 
+                    // Connect to database
+                    // Include db connect 
                     include("db.php");
 
-                    // do DB func
+                    // Do DB func
                     doDB();
                      
                     // define upload file directory
@@ -65,7 +65,6 @@
 
                          // Query Insert    
                          $sql = "INSERT INTO `users` (user_image) VALUES('$user_avatar')";
-
                          $result = mysqli_query($mysqli, $sql); 
 
                          // Get the id of last insert
@@ -94,11 +93,11 @@
 
                                // If such file is an image file type
                                if ($ext == "jpg" OR $ext == "jpeg" OR $ext == "gif" OR $ext == "png") {	
-                                 // if so, also display image dimension infos
+                                 // If so, also display image dimension infos
 
                                   // Allowed max width & height
-                                  $max_width = 100; // allowed width
-                                  $max_height = 100; // allowed height
+                                  $max_width = 100; // Allowed width
+                                  $max_height = 100; // Allowed height
 
                                    // If width & height is less than allowed 100x100 then such is not allowed
                                    if ($width < $max_width || $height < $max_height) {
@@ -114,7 +113,7 @@
 
                                     // If width & height is greater than allowed 100x100 then such is not allowed
                                     if ($width > $max_width || $height > $max_height) {
-                                      // if so, cancel the upload
+                                      // If so, cancel the upload
 
                                      // If so, echo a no go notice
                                      echo '<div class="alert alert-danger">The image size is larger than is allowed! Please upload an image 100px by 100px in size.</div>';
@@ -124,9 +123,9 @@
 
                                     }
     
-                                    // if width & height is equal to allowed 100x100 then such is allowed
+                                    // If width & height is equal to allowed 100x100 then such is allowed
                                     if ($width == $max_width || $height == $max_height) {
-	                                   // if so, do the upload
+	                                   // If so, do the upload
 
 	                                   // If is an uploaded file
 	                                   if (is_uploaded_file($user_image["tmp_name"])) {
@@ -151,7 +150,6 @@
 
 		                                 // Query Insert                            
 		                                 $sql = "INSERT INTO `users` (user_image) VALUES('$user_avatar')";
-
 		                                 $result = mysqli_query($mysqli, $sql); 
 
 		                                 // Get the id of last insert
@@ -184,11 +182,11 @@
 
                     }
                 ?>                  
-                <!-- Card Add User -->
+                <!-- Card: Add User -->
                 <div class="card mb-4">
                     <div class="card-body">
                          <h5 class="card-title border-bottom pb-3"><i class="fa-solid fa-user-plus"></i> Add User</h5> 
-                            <!-- Add User User Image -->
+                            <!-- Add User: Form -->
                             <form action="" method="POST" enctype="multipart/form-data">
                                 <div class="mb-3">
                                      <label class="mb-3"> User Image: </label>
@@ -204,11 +202,11 @@
                          </form>
                     </div>
                 </div>
-           </div>  <!-- ./ end container -->                     
+           </div>  <!-- ./ End container -->                     
            <!-- JS Files -->
-           <!-- JQuery -->
+           <!-- JQuery JS -->
            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
-           <!-- Bootstrap -->
+           <!-- Bootstrap JS -->
            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script> 
       </body>  
  </html> 

@@ -19,14 +19,14 @@
                      <li class="breadcrumb-item active"><i class="fa-solid fa-file-edit"></i> Edit Post</li>
                 </ol> 
                 <?php
-                    // connect to database
-                    // include db connect
+                    // Connect to database
+                    // Include db connect
                     include("db.php");
 
-                    // do DB Func
+                    // Do DB Func
                     doDB();
 
-                    // define upload file directory
+                    // Define upload file directory
                     $file_dir = "posts";
 
                          // Define as post id 1 form demo
@@ -110,11 +110,11 @@
 
                                    // If such file is an image file type
                                    if ($ext == "jpg" OR $ext == "jpeg" OR $ext == "gif" OR $ext == "png") {	
-                                     // if so, also display image dimension infos
+                                     // If so, also display image dimension infos
 
                                      // Allowed max width & height
-                                     $max_width = 850; // allowed width
-                                     $max_height = 350; // allowed height
+                                     $max_width = 850; // Allowed width
+                                     $max_height = 350; // Allowed height
 
                                        // If width & height is less than allowed 850x350 then such is not allowed
                                        if ($width < $max_width || $height < $max_height) {
@@ -133,7 +133,7 @@
 
                                        // If width & height is greater than allowed 850x350 then such is not allowed
                                        if ($width > $max_width || $height > $max_height) {
-                                          // if so, cancel the upload
+                                          // If so, cancel the upload
 
                                          // If so, echo a no go notice
                                          echo '<div class="alert alert-warning">The image size is larger than is allowed! Please upload an image 850px by 350px in size.</div>';
@@ -148,7 +148,7 @@
     
                                         // if width & height is equal to allowed 850x350 then such is allowed
                                         if ($width == $max_width || $height == $max_height) {
-	                                      // if so, do the upload
+	                                      // If so, do the upload
 
 	                                      // If is an uploaded file
 	                                      if (is_uploaded_file($post_image["tmp_name"])) {
@@ -176,7 +176,6 @@
 
                                          // Query Update
                                          $sql = "UPDATE `posts` SET post_image = '$post_postimage' WHERE post_id = '$Post_ID'";
-
                                          $result = mysqli_query($mysqli, $sql);
 
                                          // Post image is post postimage
@@ -209,17 +208,17 @@
 
                         }
                 ?>
-                <!-- Card Edit Post -->
+                <!-- Card: Edit Post -->
                 <div class="card mb-4">
                   <div class="card-body">
                        <h5 class="card-title border-bottom pb-3"><i class="fa-solid fa-file-edit"></i> Edit Post</h5>  	
-                       <!-- Edit Post Form -->
+                       <!-- Edit Post: Form -->
                        <form action="" method="POST" enctype="multipart/form-data">
                             <div class="mb-3">
                                  <label class="mb-3"> Post Image: </label>
                                  <br />
                                  <img height="350" width="850" class="img-responsive img-thumbnail mb-3" src="<?php echo $file_dir;?>/<?php echo $post_image; ?>">
-                                 <div class="alert alert-warning mb-3">Upload must be an image & be 850px by 350px in size.</div>                       
+                                 <div class="alert alert-warning mb-3">Upload must be an image & be 850px by 350px in size.</div>              
                                      <input type="file" name="post_image" class="form-control">
                                  </div>                              
                                  <div class="mb-3">
@@ -229,11 +228,11 @@
                         </form>
                   </div>
                 </div>
-           </div>  <!-- ./ end container -->
+           </div>  <!-- ./ End Container -->
            <!-- JS Files -->
-           <!-- JQuery -->
+           <!-- JQuery JS -->
            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
-           <!-- Bootstrap -->
+           <!-- Bootstrap JS -->
            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script> 
       </body>  
  </html>  
