@@ -1,19 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-           <title>Edit User - Example</title>
-           <!-- CSS Files -->
-           <!-- Bootstrap CSS -->  
-           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
-           <!-- Font Awesome CSS -->
-           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />   
-      </head>  
-      <body>  
-           <!-- Container -->
-           <div class="container mt-5"> 
-                <!-- Breadecrumb -->
+                
+                <!-- Breadcrumb -->
                 <ol class="breadcrumb mb-4">
                      <li class="breadcrumb-item"><i class="fa-solid fa-dashboard"></i> <a href="index.html">Dashboard</a></li>
                      <li class="breadcrumb-item active"><i class="fa-solid fa-user-edit"></i> Edit User</li>
@@ -31,11 +17,33 @@
                     // Do DB Function
                     doDB();
 
-                    // Define Upload file directory
-                    $file_dir = "users";
+                     // Define Upload file directory
+                     $file_dir = "users";
+
+                       // If not get user_id
+                       if (!isset($_GET['user_id'])) {
 
                          // Define as User ID '1' - since is form demo
                          $User_ID = '1';
+                         
+                         // Query Select
+                         $sql = "SELECT * FROM `users` WHERE user_id = '$User_ID'";
+                         $result = mysqli_query($mysqli, $sql);
+
+                          // While
+                          while ($row = mysqli_fetch_assoc($result)) {
+
+                             // User Image
+                             $user_image = $row['user_image'];
+
+                           }
+
+                        }
+
+                       // If get user_id
+                       if (isset($_GET['user_id'])) {
+
+                         $User_ID = $_GET['user_id'];
 
                          // Query Select
                          $sql = "SELECT * FROM `users` WHERE user_id = '$User_ID'";
@@ -49,9 +57,11 @@
 
                            }
 
-                          // Update Record
-                          // If edit user button
-                          if (isset($_POST['btn_edit_user'])) {
+                        }
+
+                        // Update Record
+                        // If edit user button
+                        if (isset($_POST['btn_edit_user'])) {
 
                             // File Upload
                             // File User Image Name
@@ -214,6 +224,7 @@
 
                         }
                 ?>
+
                 <!-- Card: Edit User -->
                 <div class="card mb-4">
                   <div class="card-body">
@@ -234,11 +245,4 @@
                         </form>
                   </div>
                 </div>
-           </div>  <!-- ./ End Container -->
-           <!-- JS Files -->
-           <!-- JQuery JS -->
-           <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
-           <!-- Bootstrap JS -->
-           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script> 
-      </body>  
- </html>  
+                

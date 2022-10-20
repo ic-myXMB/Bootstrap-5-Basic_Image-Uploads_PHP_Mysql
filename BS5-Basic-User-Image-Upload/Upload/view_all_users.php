@@ -1,18 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-           <title>View All Users - Example</title>
-           <!-- CSS Files -->
-           <!-- Bootstrap CSS -->  
-           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
-           <!-- Font Awesome CSS -->
-           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />   
-      </head>  
-      <body>  
-           <!-- Container -->
-           <div class="container mt-5">
+                
                 <!-- Breadrcrumb -->
                 <ol class="breadcrumb mb-4">
                      <li class="breadcrumb-item"><i class="fa-solid fa-dashboard"></i> <a href="index.html">Dashboard</a></li>
@@ -59,23 +45,38 @@
                              $user_image = $data_user['user_image'];
 
                         ?>
+                        
                          <td><?php echo $user_id; ?></td>
                          <td><img height="50" width="50" class="img-responsive" src="<?php echo $file_dir; ?>/<?php echo $user_image; ?>"></td>
-                         <td><a href="#" class="btn btn-danger"><span class="fa-solid fa-trash"></span></a></td> 
-                         <td><a href="#" class="btn btn-success"><span class="fa-solid fa-edit"></span></a></td>   
+                         <td><a href="users.php?delete=<?php echo $user_id; ?>" class="btn btn-danger"><span class="fa-solid fa-trash"></span></a></td> 
+                         <td><a href="users.php?opt=edit_user&user_id=<?php echo $user_id; ?>" class="btn btn-success"><span class="fa-solid fa-edit"></span></a></td>   
                       </tr>  
-                      <?php
+					  <?php
+				           }
+                             // Delete User
+				            // If Is Get Delete 
+                            if (isset($_GET['delete'])) {
+
+                             // User Id
+                             $user_id = $_GET['delete'];
+
+                             // Query Delete
+                             $sql = "DELETE FROM `users` WHERE user_id = '$user_id'";
+                             $user_delete = mysqli_query($mysqli, $sql);
+
+                                // If user delete
+                                if ($user_delete) {
+
+                                 // Unlink Old Image
+                            	 unlink("$file_dir/$old");                                    	
+                                    	
+                                 // Redirect 
+                                 header("Location: users.php");
+
+                                }
                             }
-                      ?>                                                        
+                        ?>                                                        
                   </table>
                </div>
             </div>
-         </div>  <!-- ./ End container -->                     
-         <!-- JS Files -->
-         <!-- JQuery JS -->
-         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
-         <!-- Bootstrap JS -->
-         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script> 
-    </body>  
-</html> 
-                   
+                
