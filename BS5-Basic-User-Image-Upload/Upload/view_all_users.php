@@ -64,9 +64,9 @@
                          <td><a href="#" class="btn btn-danger"><span class="fa-solid fa-trash"></span></a></td> 
                          <td><a href="#" class="btn btn-success"><span class="fa-solid fa-edit"></span></a></td>   
                       </tr>  
-					  <?php
-				           }
-                        ?>                                                        
+                      <?php
+                            }
+                      ?>                                                        
                   </table>
                </div>
             </div>
