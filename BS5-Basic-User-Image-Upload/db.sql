@@ -4,3 +4,4 @@ CREATE TABLE IF NOT EXISTS `users` (
 );
 
 INSERT INTO `users` VALUES('1', '1666010180.gif');
+INSERT INTO `users` VALUES('2', '1666011801.gif');

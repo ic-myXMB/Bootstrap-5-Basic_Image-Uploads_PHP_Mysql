@@ -77,6 +77,7 @@ Run sql queries on your test database:
     	`user_image` TEXT NOT NULL);
 
     INSERT INTO `users` VALUES('1', '1666010180.gif');
+    INSERT INTO `users` VALUES('2', '1666011801.gif');    
 
 * Such query can also be found in and copied from a file if needed: 
 
