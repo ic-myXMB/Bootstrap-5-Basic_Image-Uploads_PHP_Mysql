@@ -36,7 +36,9 @@
                     if (isset($_POST['btn_add_post'])) {
 
                     	 // File Upload 
+                    	 // File Post Image Name
                          $post_image = $_FILES['post_image']['name'];
+                         // File Post Image Temp Name
                          $post_temp = $_FILES['post_image']['tmp_name']; 
 
                         // If image empty on upload
@@ -70,7 +72,7 @@
                          // Get the id of last insert
                          $post_id = mysqli_insert_id($mysqli);
 
-                         // Echo
+                         // Echo Alert Edit Success
                          echo '<div class="alert alert-success">Edit success.</div>';
 
                          // Then redirect to the posts edit post page
@@ -93,7 +95,7 @@
 
                                // If such file is an image file type
                                if ($ext == "jpg" OR $ext == "jpeg" OR $ext == "gif" OR $ext == "png") {	
-                                 // If so, also display image dimension infos
+                                 // If so, then check dimensions
 
                                   // Allowed max width & height
                                   $max_width = 850; // Allowed width
@@ -103,7 +105,7 @@
                                    if ($width < $max_width || $height < $max_height) {
                                      // If so, cancel the upload
 
-                                     // If so, echo a no go notice
+                                     // If so, echo Alert a no go notice
                                      echo '<div class="alert alert-danger">The image size is smaller than is allowed! Please upload an image 850px by 350px in size.</div>';
 
                                      // If so, then redirect back to fileupload form
@@ -113,9 +115,9 @@
 
                                     // If width & height is greater than allowed 850x350 then such is not allowed
                                     if ($width > $max_width || $height > $max_height) {
-                                      // If so, cancel the upload
+                                     // If so, cancel the upload
 
-                                     // If so, echo a no go notice
+                                     // If so, echo Alert a no go notice
                                      echo '<div class="alert alert-danger">The image size is larger than is allowed! Please upload an image 850px by 350px in size.</div>';
 
                                      // If so, then redirect back to fileupload form
@@ -143,7 +145,7 @@
 		                                 // If so, move upload file or die
 		                                 move_uploaded_file($post_image["tmp_name"], "$file_dir/$post_postimage"); 
 
-		                                 // If so, is an image file so echo image uploaded success notice
+		                                 // If so, is an image file so echo Alert image uploaded success notice
 		                                 echo '<div class="alert alert-primary">The image file was uploaded!</div><br/>';
 
 		                                }
@@ -155,7 +157,7 @@
 		                                 // Get the id of last insert
 		                                 $post_id = mysqli_insert_id($mysqli);
 
-	                                     // If so, is an image file so echo image uploaded success notice
+	                                     // If so, is an image file so echo Alert image uploaded success notice
 	                                     echo '<div class="alert alert-success">Add Post Success!</div>';
 
 	                                     // If so, then redirect to the posts edit post page
@@ -165,10 +167,10 @@
 
 	                            } else {
 
-	                                 // File type is not an image file type so echo an invalid image format notice
+	                                 // File type is not an image file type so echo Alert an invalid image format notice
 	                                 echo '<div class="alert alert-warning">File is not an image thus it is an invalid image format. Only upload JPG or JPEG or GIF or PNG file types.</div>';
 
-	                                 // Echo
+	                                 // Echo Alert Query Failed
 	                                 echo '<div class="alert alert-danger">Query Failed.</div>';
 
 	                                 // Redirect back to the add post form

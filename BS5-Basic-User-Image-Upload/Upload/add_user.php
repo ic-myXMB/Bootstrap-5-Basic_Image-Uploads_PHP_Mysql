@@ -26,7 +26,7 @@
                     // Do DB func
                     doDB();
                      
-                    // define upload file directory
+                    // Define upload file directory
                     $file_dir = "users";                    
 
                     // Since empty define default avatar image display
@@ -35,8 +35,10 @@
                     // If button add user 
                     if (isset($_POST['btn_add_user'])) {
 
-                    	 // File Upload 
+                    	 // File Upload
+                    	 // File User Image Name
                          $user_image = $_FILES['user_image']['name'];
+                         // File User Image Temp Name
                          $user_temp = $_FILES['user_image']['tmp_name']; 
 
                         // If image empty on upload
@@ -70,7 +72,7 @@
                          // Get the id of last insert
                          $user_id = mysqli_insert_id($mysqli);
 
-                         // Echo
+                         // Echo Alert Edit Success
                          echo '<div class="alert alert-success">Edit success.</div>';
 
                          // Then redirect to the users edit user page
@@ -93,7 +95,7 @@
 
                                // If such file is an image file type
                                if ($ext == "jpg" OR $ext == "jpeg" OR $ext == "gif" OR $ext == "png") {	
-                                 // If so, also display image dimension infos
+                                  // If so, then check image dimensions
 
                                   // Allowed max width & height
                                   $max_width = 100; // Allowed width
@@ -103,7 +105,7 @@
                                    if ($width < $max_width || $height < $max_height) {
                                      // If so, cancel the upload
 
-                                     // If so, echo a no go notice
+                                     // If so, echo Alert a no go notice
                                      echo '<div class="alert alert-danger">The image size is smaller than is allowed! Please upload an image 100px by 100px in size.</div>';
 
                                      // If so, then redirect back to fileupload form
@@ -115,7 +117,7 @@
                                     if ($width > $max_width || $height > $max_height) {
                                       // If so, cancel the upload
 
-                                     // If so, echo a no go notice
+                                     // If so, echo Alert a no go notice
                                      echo '<div class="alert alert-danger">The image size is larger than is allowed! Please upload an image 100px by 100px in size.</div>';
 
                                      // If so, then redirect back to fileupload form
@@ -143,7 +145,7 @@
 		                                 // If so, move upload file or die
 		                                 move_uploaded_file($user_image["tmp_name"], "$file_dir/$user_avatar"); 
 
-		                                 // If so, is an image file so echo image uploaded success notice
+		                                 // If so, is an image file so echo Alert image uploaded success notice
 		                                 echo '<div class="alert alert-primary">The image file was uploaded!</div><br/>';
 
 		                                }
@@ -155,7 +157,7 @@
 		                                 // Get the id of last insert
 		                                 $user_id = mysqli_insert_id($mysqli);
 
-	                                     // If so, is an image file so echo image uploaded success notice
+	                                     // If so, is an image file so echo Alert image uploaded success notice
 	                                     echo '<div class="alert alert-success">Add User Success!</div>';
 
 	                                     // If so, then redirect to the users edit user page
@@ -165,10 +167,10 @@
 
 	                            } else {
 
-	                                 // File type is not an image file type so echo an invalid image format notice
+	                                 // File type is not an image file type so echo Alert an invalid image format notice
 	                                 echo '<div class="alert alert-warning">File is not an image thus it is an invalid image format. Only upload JPG or JPEG or GIF or PNG file types.</div>';
 
-	                                 // Echo
+	                                 // Echo Alert Query Failed
 	                                 echo '<div class="alert alert-danger">Query Failed.</div>';
 
 	                                 // Redirect back to the add user form

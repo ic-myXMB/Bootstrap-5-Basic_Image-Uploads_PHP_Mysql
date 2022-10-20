@@ -49,7 +49,9 @@
                           if (isset($_POST['btn_edit_post'])) {
 
                             // File Upload
+                            // File Post Image Name
                             $Post_Image = $_FILES['post_image']['name'];
+                            // File Post Image Temp Name
                             $Post_Temp = $_FILES['post_image']['tmp_name'];                          
  
                             // If image empty on upload
@@ -71,10 +73,10 @@
                               $sql = "UPDATE `posts` SET post_image = '$post_image' WHERE post_id = '$Post_ID'";
                               $result = mysqli_query($mysqli, $sql);
 
-                              // Echo
+                              // Echo Alert Edit Success
                               echo '<div class="alert alert-success">Edit success.</div>';
 
-	                          // Echo
+	                          // Echo Alert No Upload Old Image Retained
 	                          echo '<div class="alert alert-warning">No upload file was selected thus the Old image was retained.</div>'; 
 
 		                      // Redirect
@@ -110,7 +112,7 @@
 
                                    // If such file is an image file type
                                    if ($ext == "jpg" OR $ext == "jpeg" OR $ext == "gif" OR $ext == "png") {	
-                                     // If so, also display image dimension infos
+                                     // If so, then check dimensions
 
                                      // Allowed max width & height
                                      $max_width = 850; // Allowed width
@@ -120,10 +122,10 @@
                                        if ($width < $max_width || $height < $max_height) {
                                          // If so, cancel the upload
 
-                                         // If so, echo a no go notice
+                                         // If so, echo Alert - a no go notice
                                          echo '<div class="alert alert-warning">The image size is smaller than is allowed! Please upload an image 850px by 350px in size.</div>';
 
-                                         // Echo
+                                         // Echo Alert Upload Failed Old Image Retained
                                          echo '<div class="alert alert-danger">Upload Failed: Old image retained.</div>';
 
                                          // Show old image
@@ -133,12 +135,12 @@
 
                                        // If width & height is greater than allowed 850x350 then such is not allowed
                                        if ($width > $max_width || $height > $max_height) {
-                                          // If so, cancel the upload
+                                         // If so, cancel the upload
 
-                                         // If so, echo a no go notice
+                                         // If so, echo Alert a no go notice
                                          echo '<div class="alert alert-warning">The image size is larger than is allowed! Please upload an image 850px by 350px in size.</div>';
 
-                                         // Echo
+                                         // Echo Alert Upload Failed Old Image Retained
                                          echo '<div class="alert alert-danger">Upload Failed: Old image retained.</div>';
 
                                          // Show old image
@@ -154,7 +156,7 @@
 	                                      if (is_uploaded_file($post_image["tmp_name"])) {
 
 	                                   	     // Unlink Old Image
-	                                   	     unlink("posts/$old"); 
+	                                   	     unlink("$file_dir/$old"); 
 
 		                                     // If so, rename said file
 		                                     $temp = explode(".", $post_image["name"]);
@@ -169,7 +171,7 @@
 		                                     // If so, move upload file or die
 		                                     move_uploaded_file($post_image["tmp_name"], "$file_dir/$post_postimage"); 
 
-		                                     // If so, is an image file so echo image uploaded success notice
+		                                     // If so, is an image file so echo Alert image uploaded success notice
 		                                     echo '<div class="alert alert-primary">The image file was uploaded!</div><br/>';
 
 		                                    }
@@ -191,13 +193,13 @@
 
 	                                } else {
 
-	                                 // File type is not an image file type so echo an invalid image format notice
+	                                 // File type is not an image file type so echo Alert an invalid image format notice
 	                                 echo '<div class="alert alert-warning">Upload File is not an image type. Only upload JPG or JPEG or GIF or PNG file types.</div>';
 
 	                                 // Show old image
 	                                 $post_image = $old;
 
-	                                 // Echo
+	                                 // Echo Alert Upload Failed Old Image Retained
 	                                 echo '<div class="alert alert-danger">Upload Failed: Old image retained.</div>';	        	    
 
 	                                }

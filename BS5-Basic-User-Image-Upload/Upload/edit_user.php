@@ -49,7 +49,9 @@
                           if (isset($_POST['btn_edit_user'])) {
 
                             // File Upload
+                            // File User Image Name
                             $User_Image = $_FILES['user_image']['name'];
+                            // File User Image Temp Name
                             $User_Temp = $_FILES['user_image']['tmp_name'];                          
  
                             // If image empty on upload
@@ -71,10 +73,10 @@
                               $sql = "UPDATE `users` SET user_image = '$user_image' WHERE user_id = '$User_ID'";
                               $result = mysqli_query($mysqli, $sql);
 
-                              // Echo
+                              // Echo Alert Edit Success
                               echo '<div class="alert alert-success">Edit success.</div>';
 
-	                          // Echo
+	                          // Echo Alert No Upload Old Image Retained
 	                          echo '<div class="alert alert-warning">No upload file was selected thus the Old image was retained.</div>'; 
 
 		                      // Redirect
@@ -109,7 +111,7 @@
 
                                    // If such file is an image file type
                                    if ($ext == "jpg" OR $ext == "jpeg" OR $ext == "gif" OR $ext == "png") {	
-                                     // If so, also display image dimension infos
+                                     // If so, then check image dimensions
 
                                      // Allowed max width & height
                                      $max_width = 100; // Allowed width
@@ -119,10 +121,10 @@
                                        if ($width < $max_width || $height < $max_height) {
                                          // If so, cancel the upload
 
-                                         // If so, echo a no go notice
+                                         // If so, echo Alert a no go notice
                                          echo '<div class="alert alert-warning">The image size is smaller than is allowed! Please upload an image 100px by 100px in size.</div>';
 
-                                         // Echo
+                                         // Echo Alert Upload Failed Old Image Retained
                                          echo '<div class="alert alert-danger">Upload Failed: Old image retained.</div>';
 
                                          // Show old image
@@ -134,10 +136,10 @@
                                        if ($width > $max_width || $height > $max_height) {
                                           // If so, cancel the upload
 
-                                         // If so, echo a no go notice
+                                         // If so, echo Alert a no go notice
                                          echo '<div class="alert alert-warning">The image size is larger than is allowed! Please upload an image 100px by 100px in size.</div>';
 
-                                         // Echo
+                                         // Echo Alert Upload Failed Old Image Retained
                                          echo '<div class="alert alert-danger">Upload Failed: Old image retained.</div>';
 
                                          // Show old image
@@ -153,7 +155,7 @@
 	                                      if (is_uploaded_file($user_image["tmp_name"])) {
 
 	                                   	     // Unlink Old Image
-	                                   	     unlink("users/$old"); 
+	                                   	     unlink("$file_dir/$old"); 
 
 		                                     // If so, rename said file
 		                                     $temp = explode(".", $user_image["name"]);
@@ -168,7 +170,7 @@
 		                                     // If so, move upload file or die
 		                                     move_uploaded_file($user_image["tmp_name"], "$file_dir/$user_avatar"); 
 
-		                                     // If so, is an image file so echo image uploaded success notice
+		                                     // If so, is an image file so echo Alert image uploaded success notice
 		                                     echo '<div class="alert alert-primary">The image file was uploaded!</div><br/>';
 
 		                                    }
@@ -180,7 +182,7 @@
                                          // User image is user avatar
                                          $user_image = $user_avatar;
 
-		                                 // If so, is an image file so echo image uploaded success notice
+		                                 // If so, is an image file so echo Alert image uploaded success notice
 		                                 echo '<div class="alert alert-success">Edit User Success!</div>';
 
 		                                 // Redirect
@@ -190,13 +192,13 @@
 
 	                                } else {
 
-	                                 // File type is not an image file type so echo an invalid image format notice
+	                                 // File type is not an image file type so echo Alert an invalid image format notice
 	                                 echo '<div class="alert alert-warning">Upload File is not an image type. Only upload JPG or JPEG or GIF or PNG file types.</div>';
 
 	                                 // Show old image
 	                                 $user_image = $old;
 
-	                                 // Echo
+	                                 // Echo Alert Upload Failed Old Image Retained
 	                                 echo '<div class="alert alert-danger">Upload Failed: Old image retained.</div>';	        	    
 
 	                                }
