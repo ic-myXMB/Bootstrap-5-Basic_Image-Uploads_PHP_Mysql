@@ -55,7 +55,7 @@
                          <td><a href="users.php?opt=edit_user&user_id=<?php echo $user_id; ?>" class="btn btn-success"><span class="fa-solid fa-edit"></span></a></td>   
                       </tr>  
                       <?php
-				           }
+                         }
 				           
                             // Delete User
                             // If Is Get Delete 

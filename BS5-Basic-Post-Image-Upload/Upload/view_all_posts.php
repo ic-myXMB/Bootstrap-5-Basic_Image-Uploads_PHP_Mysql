@@ -55,7 +55,7 @@
                          <td><a href="posts.php?opt=edit_post&post_id=<?php echo $post_id; ?>" class="btn btn-success"><span class="fa-solid fa-edit"></span></a></td>   
                       </tr>  
                       <?php
-				           }
+                         }
 				           
                             // Delete Post
                             // If Is Get Delete 
