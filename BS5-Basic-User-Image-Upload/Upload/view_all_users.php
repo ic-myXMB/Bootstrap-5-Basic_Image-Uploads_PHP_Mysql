@@ -53,8 +53,9 @@
                       </tr>  
 					  <?php
 				           }
-                             // Delete User
-				            // If Is Get Delete 
+				           
+                            // Delete User
+                            // If Is Get Delete 
                             if (isset($_GET['delete'])) {
 
                              // User Id
