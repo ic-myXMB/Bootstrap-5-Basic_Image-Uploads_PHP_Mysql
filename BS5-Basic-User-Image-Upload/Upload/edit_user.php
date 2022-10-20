@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-           <title></title>
+           <title>Edit User - Example</title>
            <!-- CSS Files -->
            <!-- Bootstrap CSS -->  
            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
@@ -19,17 +19,22 @@
                      <li class="breadcrumb-item active"><i class="fa-solid fa-user-edit"></i> Edit User</li>
                 </ol> 
                 <?php
+                    /*
+                     * Simple User Image Upload (BS5)
+                     * Author - ic-myXMB
+                     */
+
                     // Connect to database
                     // Include db connect
                     include("db.php");
 
-                    // Do DB Func
+                    // Do DB Function
                     doDB();
 
-                    // Define upload file directory
+                    // Define Upload file directory
                     $file_dir = "users";
 
-                         // Define as user id '1' - form demo
+                         // Define as User ID '1' - since is form demo
                          $User_ID = '1';
 
                          // Query Select
@@ -218,7 +223,7 @@
                             <div class="mb-3">
                                  <label class="mb-3"> User Image: </label>
                                  <br />
-                                 <img height="150" width="150" class="img-responsive img-thumbnail mb-3" src="<?php echo $file_dir;?>/<?php echo $user_image; ?>">
+                                 <img height="150" width="150" class="img-responsive img-thumbnail mb-3" src="<?php echo $file_dir; ?>/<?php echo $user_image; ?>">
                                  <div class="alert alert-warning mb-3">Upload must be an image & be 100px by 100px in size.</div>                
                                      <input type="file" name="user_image" class="form-control">
                                  </div>                              

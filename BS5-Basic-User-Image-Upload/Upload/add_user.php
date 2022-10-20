@@ -3,9 +3,9 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-           <title></title>
-           <!-- CSS Files -->
-           <!-- Bootstrap -->  
+           <title>Add User - Example</title>
+           <!-- CSS Files CSS -->
+           <!-- Bootstrap CSS -->  
            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
            <!-- Font Awesome -->
            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />   
@@ -19,14 +19,19 @@
                      <li class="breadcrumb-item active"><i class="fa-solid fa-user-plus"></i> Add User</li>
                 </ol>
                 <?php
+                    /*
+                     * Simple User Image Upload (BS5)
+                     * Author - ic-myXMB
+                     */
+
                     // Connect to database
                     // Include db connect 
                     include("db.php");
 
-                    // Do DB func
+                    // Do DB function
                     doDB();
                      
-                    // Define upload file directory
+                    // Define Upload file directory
                     $file_dir = "users";                    
 
                     // Since empty define default avatar image display
