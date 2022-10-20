@@ -90,7 +90,7 @@
 	                          echo '<div class="alert alert-warning">No upload file was selected thus the Old image was retained.</div>'; 
 
 		                      // Redirect
-		                      header("Refresh:2; url= edit_post.php", true, 303);	                                                        
+		                      header("Refresh:2; url= posts.php?opt=edit_post&post_id=$Post_ID", true, 303);	                                                        
 
                             }
 
@@ -197,7 +197,7 @@
 		                                 echo '<div class="alert alert-success">Edit Post Success!</div>';
 
 		                                 // Redirect
-		                                 header("Refresh:2; url= edit_post.php", true, 303);
+		                                 header("Refresh:2; url= posts.php?opt=edit_post&post_id=$Post_ID", true, 303);
 
 		                                }
 
