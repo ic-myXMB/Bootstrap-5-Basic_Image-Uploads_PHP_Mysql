@@ -4,13 +4,17 @@ Bootstrap 5 Basic Image Upload with PHP and Mysql:
 Tools Used for this project:
 
 
-SublimeText (code editor):
+* SublimeText (code editor): https://www.sublimetext.com
 
-https://www.sublimetext.com
+* Bitnami MAMP Stack (localhost dev): https://bitnami.com/stack/mamp/installer
 
-Bitnami MAMP Stack (localhost dev):
+* Github Desktop (Code Repository Management): https://desktop.github.com
 
-https://bitnami.com/stack/mamp/installer
+* Bootstrap 5 (Framework): https://getbootstrap.com
+
+* Font Awesome 6 (Icons): https://fontawesome.com
+
+
 
 Bootstrap 5 Basic Post Post Image Upload with PHP and Mysql:
 
