@@ -38,6 +38,9 @@
                          // While
                          while ($data_user = mysqli_fetch_assoc($users)) {
 
+                         	 // Old Image
+                         	 $old = $data_user['user_image'];
+
                              // User ID     
                              $user_id = $data_user['user_id'];
 
@@ -51,11 +54,10 @@
                          <td><a href="users.php?delete=<?php echo $user_id; ?>" class="btn btn-danger"><span class="fa-solid fa-trash"></span></a></td> 
                          <td><a href="users.php?opt=edit_user&user_id=<?php echo $user_id; ?>" class="btn btn-success"><span class="fa-solid fa-edit"></span></a></td>   
                       </tr>  
-                      <?php
-                         }
-				           
-                            // Delete User
-                            // If Is Get Delete 
+					  <?php
+				           }
+                             // Delete User
+				            // If Is Get Delete 
                             if (isset($_GET['delete'])) {
 
                              // User Id
