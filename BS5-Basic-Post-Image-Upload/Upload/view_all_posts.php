@@ -18,7 +18,7 @@
                      <li class="breadcrumb-item"><i class="fa-solid fa-dashboard"></i> <a href="index.html">Dashboard</a></li>
                      <li class="breadcrumb-item active"><i class="fa-solid fa-file"></i> View All Posts</li>
                 </ol>
-                <!-- View All Users Table -->
+                <!-- View All Posts Table -->
                 <div class="table-responsive">
                    <table class="table table-striped table-bordered">
                       <tr>
@@ -55,7 +55,7 @@
                              // Post ID     
                              $post_id = $data_post['post_id'];
 
-                             // User Image
+                             // Post Image
                              $post_image = $data_post['post_image'];
 
                         ?>
