@@ -29,9 +29,9 @@
                        <h5 class="card-title border-bottom pb-3"><i class="fa-solid fa-binoculars"></i> View Examples</h5> 
                        <!-- List -->
                        <ul class="list-group">
-                         <li class="list-group-item"><a href="add_post.php" style="text-decoration: none;"><i class="fa-solid fa-add m-2"></i> add post</a></li>
-                         <li class="list-group-item"><a href="edit_post.php" style="text-decoration: none;"><i class="fa-solid fa-edit m-2"></i> edit post</a></li>
-                         <li class="list-group-item"><a href="view_all_posts.php" style="text-decoration: none;"><i class="fa-solid fa-binoculars m-2"></i> view all posts</a></li>                         
+                         <li class="list-group-item"><a href="posts.php?opt=add_post" style="text-decoration: none;"><i class="fa-solid fa-add m-2"></i> add post</a></li>
+                         <li class="list-group-item"><a href="posts.php?opt=edit_post" style="text-decoration: none;"><i class="fa-solid fa-edit m-2"></i> edit post</a></li>
+                         <li class="list-group-item"><a href="posts.php" style="text-decoration: none;"><i class="fa-solid fa-binoculars m-2"></i> view all posts</a></li>                         
                        </ul>
                   </div>
                 </div>
@@ -76,7 +76,8 @@ CREATE TABLE IF NOT EXISTS `posts` (
 `post_image` TEXT NOT NULL
 );
 
-INSERT INTO `posts` VALUES('1', '1666061875.jpg');</code>
+INSERT INTO `posts` VALUES('1', '1666061875.jpg');
+INSERT INTO `posts` VALUES('2', '1666268825.jpg');</code>
 </pre>
                        	<!-- Alert -->
                        	<div class="alert alert-warning m-1 mb-2 mt-2"><i class="fa-solid fa-exclamation-circle m-2"></i> In example connection file: db.php find and edit the db connections.</div>
@@ -93,9 +94,9 @@ $mysqli = mysqli_connect('localhost', 'db_user', 'db_password', 'db_name');</cod
                        <h5 class="card-title border-bottom pb-3"><i class="fa-solid fa-binoculars m-1"></i> View Examples</h5> 
                        <!-- List -->
                        <ul class="list-group m-1">
-                         <li class="list-group-item"><a href="add_post.php" style="text-decoration: none;"><i class="fa-solid fa-add m-2"></i> add post</a></li>
-                         <li class="list-group-item"><a href="edit_post.php" style="text-decoration: none;"><i class="fa-solid fa-edit m-2"></i> edit post</a></li>
-                         <li class="list-group-item"><a href="view_all_posts.php" style="text-decoration: none;"><i class="fa-solid fa-binoculars m-2"></i> view all posts</a></li>                         
+                         <li class="list-group-item"><a href="posts.php?opt=add_post" style="text-decoration: none;"><i class="fa-solid fa-add m-2"></i> add post</a></li>
+                         <li class="list-group-item"><a href="posts.php?opt=edit_post" style="text-decoration: none;"><i class="fa-solid fa-edit m-2"></i> edit post</a></li>
+                         <li class="list-group-item"><a href="posts.php" style="text-decoration: none;"><i class="fa-solid fa-binoculars m-2"></i> view all posts</a></li>                         
                        </ul>
                        </div>
                   </div>

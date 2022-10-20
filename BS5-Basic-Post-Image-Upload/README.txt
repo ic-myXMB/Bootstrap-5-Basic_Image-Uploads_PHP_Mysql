@@ -77,6 +77,7 @@ Run sql queries on your test database:
     	`post_image` TEXT NOT NULL);
 
     INSERT INTO `posts` VALUES('1', '1666061875.jpg');
+    INSERT INTO `posts` VALUES('2', '1666268825.jpg');
 
 * Such query can also be found in and copied from a file if needed: 
 

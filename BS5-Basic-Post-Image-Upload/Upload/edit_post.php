@@ -1,41 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-           <title>Edit Post - Example</title>
-           <!-- CSS Files -->
-           <!-- Bootstrap CSS -->  
-           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
-           <!-- Font Awesome CSS -->
-           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />   
-      </head>  
-      <body>  
-           <!-- Container -->
-           <div class="container mt-5"> 
-                <!-- Breadecrumb -->
+
+                <!-- Breadcrumb -->
                 <ol class="breadcrumb mb-4">
                      <li class="breadcrumb-item"><i class="fa-solid fa-dashboard"></i> <a href="index.html">Dashboard</a></li>
                      <li class="breadcrumb-item active"><i class="fa-solid fa-file-edit"></i> Edit Post</li>
                 </ol> 
                 <?php
-                    /*
-                     * Simple Post Image Upload (BS5)
-                     * Author - ic-myXMB
-                     */
-                                    
                     // Connect to database
                     // Include db connect
                     include("db.php");
 
-                    // Do DB Function
+                    // Do DB Func
                     doDB();
 
-                    // Define Upload file directory
+                    // Define upload file directory
                     $file_dir = "posts";
+
+                       // If not get post_id
+                       if (!isset($_GET['post_id'])) {
 
                          // Define as Post ID '1' - since is form demo
                          $Post_ID = '1';
+                         
+                         // Query Select
+                         $sql = "SELECT * FROM `posts` WHERE post_id = '$Post_ID'";
+                         $result = mysqli_query($mysqli, $sql);
+
+                          // While
+                          while ($row = mysqli_fetch_assoc($result)) {
+
+                             // Post Image
+                             $post_image = $row['post_image'];
+
+                           }
+
+                        }
+
+                       // If get post_id
+                       if (isset($_GET['post_id'])) {
+
+                         $Post_ID = $_GET['post_id'];
 
                          // Query Select
                          $sql = "SELECT * FROM `posts` WHERE post_id = '$Post_ID'";
@@ -48,6 +51,8 @@
                              $post_image = $row['post_image'];
 
                            }
+
+                        }
 
                           // Update Record
                           // If edit post button
@@ -215,6 +220,7 @@
 
                         }
                 ?>
+                
                 <!-- Card: Edit Post -->
                 <div class="card mb-4">
                   <div class="card-body">
@@ -224,7 +230,7 @@
                             <div class="mb-3">
                                  <label class="mb-3"> Post Image: </label>
                                  <br />
-                                 <img height="350" width="850" class="img-responsive img-thumbnail mb-3" src="<?php echo $file_dir; ?>/<?php echo $post_image; ?>">
+                                 <img height="350" width="850" class="img-responsive img-thumbnail mb-3" src="<?php echo $file_dir;?>/<?php echo $post_image; ?>">
                                  <div class="alert alert-warning mb-3">Upload must be an image & be 850px by 350px in size.</div>              
                                      <input type="file" name="post_image" class="form-control">
                                  </div>                              
@@ -235,11 +241,4 @@
                         </form>
                   </div>
                 </div>
-           </div>  <!-- ./ End Container -->
-           <!-- JS Files -->
-           <!-- JQuery JS -->
-           <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
-           <!-- Bootstrap JS -->
-           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script> 
-      </body>  
- </html>  
+
