@@ -54,10 +54,11 @@
                          <td><a href="users.php?delete=<?php echo $user_id; ?>" class="btn btn-danger"><span class="fa-solid fa-trash"></span></a></td> 
                          <td><a href="users.php?opt=edit_user&user_id=<?php echo $user_id; ?>" class="btn btn-success"><span class="fa-solid fa-edit"></span></a></td>   
                       </tr>  
-					  <?php
+                      <?php
 				           }
-                             // Delete User
-				            // If Is Get Delete 
+				           
+                            // Delete User
+                            // If Is Get Delete 
                             if (isset($_GET['delete'])) {
 
                              // User Id
