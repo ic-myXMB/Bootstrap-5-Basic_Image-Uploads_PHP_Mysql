@@ -38,8 +38,8 @@
                          // While
                          while ($data_post = mysqli_fetch_assoc($posts)) {
                          	
-                         	 // Old Image
-                         	 $old = $data_post['post_image'];
+                             // Old Image
+                             $old = $data_post['post_image'];
 
                              // Post ID     
                              $post_id = $data_post['post_id'];

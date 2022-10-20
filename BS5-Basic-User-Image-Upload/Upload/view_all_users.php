@@ -38,8 +38,8 @@
                          // While
                          while ($data_user = mysqli_fetch_assoc($users)) {
 
-                         	 // Old Image
-                         	 $old = $data_user['user_image'];
+                             // Old Image
+                             $old = $data_user['user_image'];
 
                              // User ID     
                              $user_id = $data_user['user_id'];
