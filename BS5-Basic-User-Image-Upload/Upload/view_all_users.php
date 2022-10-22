@@ -31,7 +31,6 @@
                              <th width="10%" colspan="2">Operations</th>
                          </thead>                                                                          
                       </tr>
-                      <tr>
                       <?php
                          /*
                           * Simple User Image Upload (BS5)
@@ -63,9 +62,8 @@
 
                              // User Image
                              $user_image = $data_user['user_image'];
-
-                        ?>
-                        
+                        ?><!-- User -->
+                      <tr>
                          <td><?php echo $user_id; ?></td>
                          <td><img height="50" width="50" class="img-responsive" src="<?php echo $file_dir; ?>/<?php echo $user_image; ?>"></td>
                          <td><a href="users.php?delete=<?php echo $user_id; ?>" class="btn btn-danger"><span class="fa-solid fa-trash"></span></a></td> 
