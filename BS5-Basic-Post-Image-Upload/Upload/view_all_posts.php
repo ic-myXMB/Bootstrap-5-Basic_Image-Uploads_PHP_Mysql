@@ -3,7 +3,7 @@
 
                 $is_page = 'view_all_posts.php';
 
-                $is_current_page = ucwords(str_replace("-", " ", (basename($is_page, ".php"))));
+                $is_current_page = ucwords(str_replace("_", " ", (basename($is_page, ".php"))));
 
                 $page = $_SERVER['PHP_SELF'];
 

@@ -2,10 +2,10 @@
 // Switch Demo Page Titles
 // If Is Get Opt
 if (isset($_GET['opt'])) {
-	// Opt
+    // Opt
     $opt = $_GET['opt'];
 } else {
-	// Opt
+    // Opt
     $opt = '';       
 }
 switch ($opt) {
