@@ -1,9 +1,36 @@
+<?php
+// Switch Demo Page Titles
+// If Is Get Opt
+if (isset($_GET['opt'])) {
+	// Opt
+    $opt = $_GET['opt'];
+} else {
+	// Opt
+    $opt = '';       
+}
+switch ($opt) {
+// Add User
+case 'add_user':
+ // Page Title 
+ $page_title = 'Add User';
+break;
+// Edit User
+case 'edit_user':
+ // Page Title 
+ $page_title = 'Edit User';
+break;
+// View All Users
+default:
+ // Page Title
+ $page_title = 'View All Users';
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-           <title>View All Users - Example</title>
+           <title>Demo - <?php echo $page_title; ?></title>
            <!-- CSS Files -->
            <!-- Bootstrap CSS -->  
            <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
@@ -14,7 +41,7 @@
            <!-- Container -->
            <div class="container mt-5">
            	<?php
-                 // If is Get Opt
+                 // If Is Get Opt
                  if (isset($_GET['opt'])) {
                      // Opt
                      $opt = $_GET['opt'];

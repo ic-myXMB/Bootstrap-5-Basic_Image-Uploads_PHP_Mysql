@@ -1,9 +1,25 @@
+                <?php
+                // Demo Breadcrumb
+
+                $is_page = 'edit_post.php';
+
+                $is_current_page = ucwords(str_replace("-", " ", (basename($is_page, ".php"))));
+
+                $page = $_SERVER['PHP_SELF'];
+
+                $is_current_dir = ucwords(basename(dirname($page)));
+
+                $is_current_dir_icon = '<i class="fa-solid fa-image"></i> ';
+
+                $is_current_page_icon = '<i class="fa-solid fa-file-edit"></i> ';
+                
+                ?>
 
                 <!-- Breadcrumb -->
                 <ol class="breadcrumb mb-4">
-                     <li class="breadcrumb-item"><i class="fa-solid fa-dashboard"></i> <a href="index.html">Dashboard</a></li>
-                     <li class="breadcrumb-item active"><i class="fa-solid fa-file-edit"></i> Edit Post</li>
-                </ol> 
+                     <li class="breadcrumb-item"><?php echo $is_current_dir_icon; ?> <a href="../<?php echo $is_current_dir; ?>"><?php echo $is_current_dir; ?></a></li>                   
+                     <li class="breadcrumb-item active"><?php echo $is_current_page_icon; ?> <?php echo $is_current_page; ?></li>
+                </ol>
                 <?php
                     // Connect to database
                     // Include db connect
