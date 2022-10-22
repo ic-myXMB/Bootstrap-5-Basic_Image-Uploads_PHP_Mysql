@@ -69,7 +69,7 @@
                          <td><?php echo $post_id; ?></td>
                          <td><img height="50" width="50" class="img-responsive" src="<?php echo $file_dir; ?>/<?php echo $post_image; ?>"></td>
                          <td><a href="posts.php?delete=<?php echo $post_id; ?>" class="btn btn-danger"><span class="fa-solid fa-trash"></span></a></td> 
-                         <td><a href="posts.php?opt=edit_post&post_id=<?php echo $post_id; ?>" class="btn btn-success"><span class="fa-solid fa-edit"></span></a></td>   
+                         <td><a href="posts.php?ops=edit_post&post_id=<?php echo $post_id; ?>" class="btn btn-success"><span class="fa-solid fa-edit"></span></a></td>   
                       </tr>  
                       <?php
                          }

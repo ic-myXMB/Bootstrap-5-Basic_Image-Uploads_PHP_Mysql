@@ -83,7 +83,7 @@
                          echo '<div class="alert alert-success">Edit success.</div>';
 
                          // Then redirect to the users edit user page
-                         header("Refresh:1; url= users.php?opt=edit_user&user_id=$user_id", true, 303);
+                         header("Refresh:1; url= users.php?ops=edit_user&user_id=$user_id", true, 303);
 	                                                   
                         }                        
 
@@ -116,7 +116,7 @@
                                      echo '<div class="alert alert-danger">The image size is smaller than is allowed! Please upload an image 100px by 100px in size.</div>';
 
                                      // If so, then redirect back to fileupload form
-                                     header("Refresh:1; url= users.php?opt=add_user", true, 303);
+                                     header("Refresh:1; url= users.php?ops=add_user", true, 303);
 
                                     }	
 
@@ -128,7 +128,7 @@
                                      echo '<div class="alert alert-danger">The image size is larger than is allowed! Please upload an image 100px by 100px in size.</div>';
 
                                      // If so, then redirect back to fileupload form
-                                     header("Refresh:1; url= users.php?opt=add_user", true, 303);	
+                                     header("Refresh:1; url= users.php?ops=add_user", true, 303);	
 
                                     }
     
@@ -168,7 +168,7 @@
 	                                     echo '<div class="alert alert-success">Add User Success!</div>';
 
 	                                     // If so, then redirect to the users edit user page
-	                                     header("Refresh:1; url= users.php?opt=edit_user&user_id=$user_id", true, 303);
+	                                     header("Refresh:1; url= users.php?ops=edit_user&user_id=$user_id", true, 303);
 
 		                            }
 
@@ -181,7 +181,7 @@
 	                                 echo '<div class="alert alert-danger">Query Failed.</div>';
 
 	                                 // Redirect back to the add user form
-	                                 header("Refresh:1; url= users.php?opt=add_user", true, 303);	        	    
+	                                 header("Refresh:1; url= users.php?ops=add_user", true, 303);	        	    
 
 	                            }
 

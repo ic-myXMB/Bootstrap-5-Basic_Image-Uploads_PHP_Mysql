@@ -111,7 +111,7 @@
 	                          echo '<div class="alert alert-warning">No upload file was selected thus the Old image was retained.</div>'; 
 
 		                      // Redirect
-		                      header("Refresh:2; url= users.php?opt=edit_user&user_id=$User_ID", true, 303);	                                                        
+		                      header("Refresh:2; url= users.php?ops=edit_user&user_id=$User_ID", true, 303);	                                                        
 
                             }
 
@@ -217,7 +217,7 @@
 		                                 echo '<div class="alert alert-success">Edit User Success!</div>';
 
 		                                 // Redirect
-		                                 header("Refresh:2; url= users.php?opt=edit_user&user_id=$User_ID", true, 303);
+		                                 header("Refresh:2; url= users.php?ops=edit_user&user_id=$User_ID", true, 303);
 
 		                                }
 

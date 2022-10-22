@@ -78,7 +78,7 @@
                          echo '<div class="alert alert-success">Edit success.</div>';
 
                          // Then redirect to the posts edit post page
-                         header("Refresh:1; url= posts.php?opt=edit_post&post_id=$post_id", true, 303);
+                         header("Refresh:1; url= posts.php?ops=edit_post&post_id=$post_id", true, 303);
 	                                                   
                         }                        
 
@@ -111,7 +111,7 @@
                                      echo '<div class="alert alert-danger">The image size is smaller than is allowed! Please upload an image 850px by 350px in size.</div>';
 
                                      // If so, then redirect back to fileupload form
-                                     header("Refresh:1; url= posts.php?opt=add_post", true, 303);
+                                     header("Refresh:1; url= posts.php?ops=add_post", true, 303);
 
                                     }	
 
@@ -123,7 +123,7 @@
                                      echo '<div class="alert alert-danger">The image size is larger than is allowed! Please upload an image 850px by 350px in size.</div>';
 
                                      // If so, then redirect back to fileupload form
-                                     header("Refresh:1; url= posts.php?opt=add_post", true, 303);	
+                                     header("Refresh:1; url= posts.php?ops=add_post", true, 303);	
 
                                     }
     
@@ -163,7 +163,7 @@
 	                                     echo '<div class="alert alert-success">Add Post Success!</div>';
 
 	                                     // If so, then redirect to the posts edit post page
-	                                     header("Refresh:1; url= posts.php?opt=edit_post&post_id=$post_id", true, 303);
+	                                     header("Refresh:1; url= posts.php?ops=edit_post&post_id=$post_id", true, 303);
 
 		                            }
 
@@ -176,7 +176,7 @@
 	                                 echo '<div class="alert alert-danger">Query Failed.</div>';
 
 	                                 // Redirect back to the add post form
-	                                 header("Refresh:1; url= posts.php?opt=add_post", true, 303);	        	    
+	                                 header("Refresh:1; url= posts.php?ops=add_post", true, 303);	        	    
 
 	                            }
 

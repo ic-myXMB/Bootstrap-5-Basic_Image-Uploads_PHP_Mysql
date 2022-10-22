@@ -1,14 +1,15 @@
 <?php
 // Switch Demo Page Titles
-// If Is Get Opt
-if (isset($_GET['opt'])) {
-    // Opt
-    $opt = $_GET['opt'];
+// If Is Get Ops
+if (isset($_GET['ops'])) {
+    // Ops
+    $ops = $_GET['ops'];
 } else {
-    // Opt
-    $opt = '';       
+    // Ops
+    $ops = '';       
 }
-switch ($opt) {
+// Switch Ops
+switch ($ops) {
 // Add User
 case 'add_user':
  // Page Title 
@@ -41,16 +42,16 @@ default:
            <!-- Container -->
            <div class="container mt-5">
            	<?php
-                 // If Is Get Opt
-                 if (isset($_GET['opt'])) {
-                     // Opt
-                     $opt = $_GET['opt'];
+                 // If Is Get Ops
+                 if (isset($_GET['ops'])) {
+                     // Ops
+                     $ops = $_GET['ops'];
                  } else {
-                     // Opt 
-                     $opt = '';       
+                     // Ops 
+                     $ops = '';       
                  }
-                 // Switch Opt
-                 switch ($opt) {
+                 // Switch Ops
+                 switch ($ops) {
                      // Add User
                      case 'add_user':
                          // Require
