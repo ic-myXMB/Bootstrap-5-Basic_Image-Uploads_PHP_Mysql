@@ -198,10 +198,9 @@
                                      <img height="350" width="850" class="img-responsive mb-3 img-thumbnail" src="<?php echo $file_dir; ?>/<?php echo $post_postimage; ?>">
                                      <div class="alert alert-warning mb-3">Upload must be an image & be 850px by 350px in size.</div>
                                          <input type="file" name="post_image" class="form-control">
-                                     </div>                                                                           
-                                     <div class="mb-3">
-                                         <button class="btn btn-success" type="submit" name="btn_add_post"><i class="fa-solid fa-add"></i> Add Post</button>
-                                     </div>
+                                </div>                                                                           
+                                <div class="mb-3">
+                                     <button class="btn btn-success" type="submit" name="btn_add_post"><i class="fa-solid fa-add"></i> Add Post</button>
                                 </div>
                          </form>
                     </div>

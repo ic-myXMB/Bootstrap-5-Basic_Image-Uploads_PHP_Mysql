@@ -203,10 +203,9 @@
                                      <img height="150" width="150" class="img-responsive mb-3 img-thumbnail" src="<?php echo $file_dir; ?>/<?php echo $user_avatar; ?>">
                                      <div class="alert alert-warning mb-3">Upload must be an image & be 100px by 100px in size.</div>
                                          <input type="file" name="user_image" class="form-control">
-                                     </div>                                                                           
-                                     <div class="mb-3">
-                                         <button class="btn btn-success" type="submit" name="btn_add_user"><i class="fa-solid fa-add"></i> Add User</button>
-                                     </div>
+                                </div>                                                                           
+                                <div class="mb-3">
+                                     <button class="btn btn-success" type="submit" name="btn_add_user"><i class="fa-solid fa-add"></i> Add User</button>
                                 </div>
                          </form>
                     </div>
