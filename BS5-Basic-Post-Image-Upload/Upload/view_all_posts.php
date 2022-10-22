@@ -17,8 +17,8 @@
 
                 <!-- Breadcrumb -->
                 <ol class="breadcrumb mb-4">
-                     <li class="breadcrumb-item"><?php echo $is_current_dir_icon; ?> <a href="../<?php echo $is_current_dir; ?>"><?php echo $is_current_dir; ?></a></li>                   
-                     <li class="breadcrumb-item active"><?php echo $is_current_page_icon; ?> <?php echo $is_current_page; ?></li>
+                     <li class="breadcrumb-item"><?php echo $is_current_dir_icon; ?><a href="../<?php echo $is_current_dir; ?>"><?php echo $is_current_dir; ?></a></li>                   
+                     <li class="breadcrumb-item active"><?php echo $is_current_page_icon; ?><?php echo $is_current_page; ?></li>
                 </ol>
                 
                 <!-- View All Posts Table -->
