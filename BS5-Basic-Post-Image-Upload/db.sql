@@ -4,3 +4,4 @@ CREATE TABLE IF NOT EXISTS `posts` (
 );
 
 INSERT INTO `posts` VALUES('1', '1666061875.jpg');
+INSERT INTO `posts` VALUES('2', '1666268825.jpg');
