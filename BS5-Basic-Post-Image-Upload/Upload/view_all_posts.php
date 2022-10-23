@@ -44,7 +44,7 @@
                          // Do DB function
                          doDB();
 
-                         // File User Image Upload Directory  
+                         // File Post Image Upload Directory  
                          $file_dir = "images/posts";                         
 
                          // Query Select
