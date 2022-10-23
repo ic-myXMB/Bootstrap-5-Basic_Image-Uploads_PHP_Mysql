@@ -55,7 +55,7 @@
                          while ($data_post = mysqli_fetch_assoc($posts)) {
                          	
                              // Old Image
-                             $old = $data_post['post_image'];
+                             $old_image = $data_post['post_image'];
 
                              // Post ID     
                              $post_id = $data_post['post_id'];
@@ -87,7 +87,7 @@
                                 if ($post_delete) {
 
                                  // Unlink Old Image
-                            	 unlink("$file_dir/$old");                                    	
+                            	 unlink("$file_dir/$old_image");                                    	
                                     	
                                  // Redirect 
                                  header("Location: posts.php");

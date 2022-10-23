@@ -126,7 +126,7 @@
                                 while ($row = mysqli_fetch_assoc($result)) {
 
                                  // Old Image
-                                 $old = $row['user_image'];                              
+                                 $old_image = $row['user_image'];                              
 
                                 }                              
 
@@ -159,7 +159,7 @@
                                          echo '<div class="alert alert-danger">Upload Failed: Old image retained.</div>';
 
                                          // Show old image
-                                         $user_image = $old;                                   
+                                         $user_image = $old_image;                                   
 
                                         }	
 
@@ -174,7 +174,7 @@
                                          echo '<div class="alert alert-danger">Upload Failed: Old image retained.</div>';
 
                                          // Show old image
-                                         $user_image = $old;	
+                                         $user_image = $old_image;	
 
                                         }
     
@@ -186,7 +186,7 @@
 	                                      if (is_uploaded_file($user_image["tmp_name"])) {
 
 	                                   	     // Unlink Old Image
-	                                   	     unlink("$file_dir/$old"); 
+	                                   	     unlink("$file_dir/$old_image"); 
 
 		                                     // If so, rename said file
 		                                     $temp = explode(".", $user_image["name"]);
@@ -227,7 +227,7 @@
 	                                 echo '<div class="alert alert-warning">Upload File is not an image type. Only upload JPG or JPEG or GIF or PNG file types.</div>';
 
 	                                 // Show old image
-	                                 $user_image = $old;
+	                                 $user_image = $old_image;
 
 	                                 // Echo Alert Upload Failed Old Image Retained
 	                                 echo '<div class="alert alert-danger">Upload Failed: Old image retained.</div>';	        	    

@@ -55,7 +55,7 @@
                          while ($data_user = mysqli_fetch_assoc($users)) {
 
                              // Old Image
-                             $old = $data_user['user_image'];
+                             $old_image = $data_user['user_image'];
 
                              // User ID     
                              $user_id = $data_user['user_id'];
@@ -87,7 +87,7 @@
                                 if ($user_delete) {
 
                                  // Unlink Old Image
-                            	 unlink("$file_dir/$old");                                    	
+                            	 unlink("$file_dir/$old_image");                                    	
                                     	
                                  // Redirect 
                                  header("Location: users.php");
