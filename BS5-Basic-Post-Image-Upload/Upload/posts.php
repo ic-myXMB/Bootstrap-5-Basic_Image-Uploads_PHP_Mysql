@@ -1,11 +1,11 @@
 <?php
 // Switch Demo Page Titles
-// If Is Get Ops
+// If Is Get Operations
 if (isset($_GET['ops'])) {
-    // Ops
+    // Operations
     $ops = $_GET['ops'];
 } else {
-    // Ops
+    // Operations
     $ops = '';       
 }
 // Switch Ops
@@ -14,16 +14,20 @@ switch ($ops) {
 case 'add_post':
  // Page Title 
  $page_title = 'Add Post';
+// Break 
 break;
 // Edit Post
 case 'edit_post':
  // Page Title 
  $page_title = 'Edit Post';
+// Break
 break;
 // View All Posts
 default:
  // Page Title
  $page_title = 'View All Posts';
+// Break
+break;
 }
 ?>
 <!DOCTYPE html>
@@ -42,12 +46,12 @@ default:
            <!-- Container -->
            <div class="container mt-5">
            	<?php
-                 // If Is Get Ops
+                 // If Is Get Operations
                  if (isset($_GET['ops'])) {
-                     // Ops
+                     // Operations
                      $ops = $_GET['ops'];
                  } else {
-                     // Ops 
+                     // Operations 
                      $ops = '';       
                  }
                  // Switch Ops
