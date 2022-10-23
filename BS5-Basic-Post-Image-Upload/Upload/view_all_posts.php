@@ -45,7 +45,7 @@
                          doDB();
 
                          // File User Image Upload Directory  
-                         $file_dir = "posts";                         
+                         $file_dir = "images/posts";                         
 
                          // Query Select
                          $sql = "SELECT * FROM `posts`";

@@ -34,7 +34,7 @@
                     doDB();
 
                      // Define Upload file directory
-                     $file_dir = "users";
+                     $file_dir = "images/users";
 
                        // If not get user_id
                        if (!isset($_GET['user_id'])) {

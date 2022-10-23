@@ -29,7 +29,7 @@
                     doDB();
 
                     // Define upload file directory
-                    $file_dir = "posts";
+                    $file_dir = "images/posts";
 
                        // If not get post_id
                        if (!isset($_GET['post_id'])) {

@@ -29,7 +29,7 @@
                     doDB();
                      
                     // Define upload file directory
-                    $file_dir = "posts";                    
+                    $file_dir = "images/posts";                    
 
                     // Since empty define default postimage image display
                     $post_postimage = "default_post.jpg";

@@ -34,7 +34,7 @@
                     doDB();
                      
                     // Define Upload file directory
-                    $file_dir = "users";                    
+                    $file_dir = "images/users";                    
 
                     // Since empty define default avatar image display
                     $user_avatar = "default_avatar.png";
