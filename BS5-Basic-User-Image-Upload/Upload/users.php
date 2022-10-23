@@ -38,9 +38,9 @@ break;
            <title>Demo - <?php echo $page_title; ?></title>
            <!-- CSS Files -->
            <!-- Bootstrap CSS -->  
-           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
+           <link rel="stylesheet" href="includes/bootstrap/css/bootstrap.min.css" />
            <!-- Font Awesome CSS -->
-           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />   
+           <link rel="stylesheet" href="includes/font-awesome/css/all.min.css" />   
       </head>  
       <body>  
            <!-- Container -->
@@ -80,9 +80,9 @@ break;
          </div>  <!-- ./ End container -->                     
          <!-- JS Files -->
          <!-- JQuery JS -->
-         <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
+         <script src="includes/jquery/jquery-3.5.1.min.js"></script> 
          <!-- Bootstrap JS -->
-         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script> 
+         <script src="includes/bootstrap/jscripts/bootstrap.bundle.min.js"></script> 
     </body>  
 </html> 
                    
