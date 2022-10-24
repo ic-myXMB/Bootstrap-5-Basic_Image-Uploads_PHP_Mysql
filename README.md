@@ -167,3 +167,9 @@ Final step is to visit the index.html file for this project on your localhost so
 
 
 That is it! Simple enough, right?! Hopefully you may find such of interest or usage.
+
+
+
+If you want both examples combined, you can instead just use: 
+
+https://github.com/ic-myXMB/Bootstrap-5-Basic_Image-Uploads_PHP_Mysql/tree/main/BS5-Basic-User-and-Post-Image-Upload/Upload
