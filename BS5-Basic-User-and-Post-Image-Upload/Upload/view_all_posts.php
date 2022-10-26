@@ -26,7 +26,7 @@
                 <div class="table-responsive">
                    <table class="table table-striped table-bordered">
                       <tr>
-                         <thead class="thead-white">
+                         <thead class="bg-white">
                              <th width="5%">ID</th>
                              <th width="85%">Image</th>                            
                              <th width="10%" colspan="2">Operations</th>
