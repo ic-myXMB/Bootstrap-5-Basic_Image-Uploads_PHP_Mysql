@@ -42,7 +42,7 @@ break;
            <!-- Font Awesome CSS -->
            <link rel="stylesheet" href="includes/font-awesome/css/all.min.css" />   
       </head>  
-      <body>  
+      <body class="bg-light">  
            <!-- Container -->
            <div class="container mt-5">
            	<?php
