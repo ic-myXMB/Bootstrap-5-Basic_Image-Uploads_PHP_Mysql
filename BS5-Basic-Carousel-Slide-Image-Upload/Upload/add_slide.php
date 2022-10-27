@@ -73,8 +73,11 @@
                          // Slide slideimage is new file name
                          $slide_slideimage = $new_filename;
 
+                         // Slide status
+                         $slide_status = '0';
+
                          // Query Insert    
-                         $sql = "INSERT INTO `slides` (slide_image) VALUES('$slide_slideimage')";
+                         $sql = "INSERT INTO `slides` (slide_image, slide_status) VALUES('$slide_slideimage', '$slide_status')";
                          $result = mysqli_query($mysqli, $sql); 
 
                          // Get the id of last insert
@@ -158,8 +161,11 @@
 
 		                                }
 
+		                                 // Slide status
+		                                 $slide_status = '0';
+
 		                                 // Query Insert                            
-		                                 $sql = "INSERT INTO `slides` (slide_image) VALUES('$slide_slideimage')";
+		                                 $sql = "INSERT INTO `slides` (slide_image, slide_status) VALUES('$slide_slideimage', '$slide_status')";
 		                                 $result = mysqli_query($mysqli, $sql); 
 
 		                                 // Get the id of last insert
