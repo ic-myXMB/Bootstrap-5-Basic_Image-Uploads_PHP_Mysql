@@ -84,7 +84,7 @@
                          echo '<div class="alert alert-success">Slide ID: ' . $selected.' was selected.</div>';
 
                 		 // Redirect
-                		 header("Refresh:1; url= slides.php", true, 303);
+                         header("Refresh:1; url= slides.php", true, 303);
 
                         } else {
 
@@ -92,7 +92,7 @@
                          echo '<div class="alert alert-danger">Please select a slide ID.</div>';
 
                          // Redirect
-                		 header("Refresh:1; url= slides.php", true, 303);
+                         header("Refresh:1; url= slides.php", true, 303);
 
                         }
 
