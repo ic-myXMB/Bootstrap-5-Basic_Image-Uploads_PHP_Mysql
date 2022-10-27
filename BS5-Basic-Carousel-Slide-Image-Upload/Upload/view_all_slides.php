@@ -26,7 +26,7 @@
                 <!-- Form -->
                 <form action="" method="post">
                     <div class="mb-3">
-                		<div class="input-group" style="width: 200px;">
+                		<div class="input-group" style="width: 225px;">
                            <select name="active_status" class="form-control">
                              <option value="" disabled selected="selected">Select</option>
                              <?php
@@ -59,7 +59,7 @@
                                      $slide_status = $data_slide['slide_status'];
                                 ?>
 
-                             <option value="<?php echo $slide_id; ?>"<?php echo ($slide_status == '1') ? 'selected="selected"' : '' ;?>><?php echo $slide_id; ?></option>
+                             <option value="<?php echo $slide_id; ?>"<?php echo ($slide_status == '1') ? 'selected="selected"' : '' ; ?>><?php echo $slide_id; ?></option>
                              <?php
                                 }
                              ?>
@@ -84,7 +84,7 @@
                          $result = mysqli_query($mysqli, $sql);
 
                          // Echo Success
-                         echo '<div class="alert alert-success">Slide ID: ' . $selected.' was selected.</div>';
+                         echo '<div class="alert alert-success">Slide ID: '.$selected.' was selected.</div>';
 
                          // Redirect
                          header("Refresh:1; url= slides.php", true, 303);
