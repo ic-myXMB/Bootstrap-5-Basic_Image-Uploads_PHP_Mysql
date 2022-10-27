@@ -79,9 +79,6 @@
                          // While
                          while ($data_slide = mysqli_fetch_assoc($slides)) {
                          	
-                             // Old Image
-                             //$old_image = $data_slide['slide_image'];
-
                              // Slide ID     
                              $slide_id = $data_slide['slide_id'];
 
