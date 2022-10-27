@@ -26,7 +26,7 @@
                 <!-- Form -->
                 <form action="" method="post">
                 	<div class="mb-3">
-                		<div class="input-group" style="width: 200px;">
+                        <div class="input-group" style="width: 200px;">
                            <select name="active_status" class="form-control">
                              <option value="" disabled selected="selected">Select</option>
                              <?php
@@ -83,7 +83,7 @@
                          // Echo Success
                          echo '<div class="alert alert-success">Slide ID: ' . $selected.' was selected.</div>';
 
-                		 // Redirect
+                         // Redirect
                          header("Refresh:1; url= slides.php", true, 303);
 
                         } else {
