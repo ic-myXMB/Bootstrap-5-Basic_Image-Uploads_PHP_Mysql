@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+           <title>BS5 Basic Carousel Slide Image Upload - View Documentation</title>
+           <!-- CSS Files -->
+           <!-- Bootstrap -->  
+           <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" />
+           <!-- Font Awesome CSS -->
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />   
+           <!-- Prism JS CSS -->
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/themes/prism.min.css"/>
+           <!-- Prism JS Plugins CSS -->
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/plugins/show-language/prism-show-language.min.css" />
+           <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/plugins/line-numbers/prism-line-numbers.min.css" />
+           <!-- Inline Style -->
+           <style>
+           pre[class*="language-"][data-language]::before {
+           	 top: 40px;
+           	 z-index:  999;	
+           	 border-radius: 5px 0 0 5px;
+           }
+           pre {
+           	 border-radius: 6px;
+           }
+           </style>
+
+           <!-- BackToTop CSS -->
+           <style>
+           #btn-back-to-top {
+             position: fixed;
+             bottom: 20px;
+             right: 20px;
+             display: none;
+           }
+           </style>
+      </head>  
+      <body class="bg-light">  
+           <!-- Container -->
+           <div class="container mt-5">
+           	 <!-- Heading -->
+           	 <h4><i class="fa-solid fa-code"></i> Bootstrap 5 Basic Carousel Slide Image Upload</h4>
+                <!-- Breadcrumb -->
+                <ol class="breadcrumb mb-2 mt-4 p-2 bg-white border border-default rounded-3">
+                     <li class="breadcrumb-item"><i class="fa-solid fa-dashboard"></i> <a href="index.html">Dashboard</a></li>    
+                     <li class="breadcrumb-item active"><i class="fa-solid fa-binoculars"></i> View Documentaion</li>  
+                </ol>
+                <!-- Card: List Examples-->
+                <div class="card mb-2">
+                  <div class="card-body">
+                       <h5 class="card-title border-bottom pb-3"><i class="fa-solid fa-binoculars"></i> View Examples</h5> 
+                       <!-- List -->
+                       <ul class="list-group">
+                         <li class="list-group-item"><a href="slides.php?ops=add_slide" style="text-decoration: none;"><i class="fa-solid fa-add m-2"></i> add slide</a></li>
+                         <li class="list-group-item"><a href="slides.php?ops=edit_slide" style="text-decoration: none;"><i class="fa-solid fa-edit m-2"></i> edit slide</a></li>
+                         <li class="list-group-item"><a href="slides.php" style="text-decoration: none;"><i class="fa-solid fa-binoculars m-2"></i> view all slides</a></li>
+                         <li class="list-group-item"><a href="carousel.php" style="text-decoration: none;"><i class="fa-solid fa-binoculars m-2"></i> view example carousel</a></li>                                                    
+                       </ul>
+                  </div>
+                </div>
+                <!-- Card: Description -->
+                <div class="card mb-2">
+                  <div class="card-body">
+                       <h5 class="card-title border-bottom pb-3"><i class="fa-solid fa-file-lines"></i> Description</h5> 
+                       <!-- Card Text -->
+                       <div class="card-text">
+                       	<!-- Alert -->
+                       	<div class="alert alert-secondary m-1 mb-2 mt-2"><i class="fa-solid fa-exclamation-circle m-2"></i> Simple 900px by 500px carousel slide image upload in php and mysqli with Bootstrap 5 basic examples.</div>
+                       </div>
+                  </div>
+                </div>   
+                <!-- Card: Project Tools -->
+                <div class="card mt-2 mb-2">
+                  <div class="card-body">
+                       <h5 class="card-title border-bottom pb-3"><i class="fa-solid fa-tools"></i> Project Tools</h5> 
+                       <!-- List -->
+                       <ul class="list-group">
+                         <li class="list-group-item"><a href="https://bitnami.com/stack/mamp/installer" class="text-secondary" style="text-decoration: none;" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-cubes text-secondary m-2"></i> Bitnami MAMP Stack</a></li>
+                         <li class="list-group-item"><a href="https://www.sublimetext.com" class="text-secondary" style="text-decoration: none;" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-code text-secondary m-2"></i> SublimeText Editor</a></li>
+                         <li class="list-group-item"><a href="https://getbootstrap.com/" class="text-secondary" style="text-decoration: none;" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-bootstrap text-secondary m-2"></i> Bootstrap 5</a></li>
+                         <li class="list-group-item"><a href="https://fontawesome.com" class="text-secondary" style="text-decoration: none;" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-font-awesome text-secondary m-2"></i> Font Awesome 6</a></li>                                                  
+                       </ul>
+                  </div>
+                </div>                              
+                <!-- Card: Setup -->
+                <div class="card mt-2 mb-2">
+                  <div class="card-body">
+                       <h5 class="card-title border-bottom pb-3"><i class="fa-solid fa-tools"></i> Setup</h5> 
+                       <!-- Card Text -->
+                       <div class="card-text">
+                       	<!-- Alert -->
+                       	<div class="alert alert-warning m-1 mb-2 mt-2"><i class="fa-solid fa-exclamation-circle m-2"></i> For examples to work: Set up the demo database table by running the following sql query on your test db in PHPMyAdmin.</div>
+                       	<h6 class="fw-bold text-secondary mb-1 mt-3">Code:</h6>
+                       	<!-- Code Snippet -->
+<pre class="m-1 mb-2 mt-2">
+<code class="language-sql">
+CREATE TABLE IF NOT EXISTS `slides` (
+`slide_id` INT(11) PRIMARY KEY AUTO_INCREMENT,
+`slide_image` TEXT NOT NULL
+);
+
+INSERT INTO `slides` VALUES('1', '1666766964.jpg');
+INSERT INTO `slides` VALUES('2', '1666767091.jpg');
+INSERT INTO `slides` VALUES('3', '1666767152.jpg');</code>
+</pre>
+                       	<!-- Alert -->
+                       	<div class="alert alert-warning m-1 mb-2 mt-2"><i class="fa-solid fa-exclamation-circle m-2"></i> In example connection file: db.php find and edit the db connections.</div>
+                       	<h6 class="fw-bold text-secondary mb-1 mt-3">Code:</h6>
+                       	<!-- Code Snippet -->                       	
+<pre class="m-1 mb-2 mt-2">
+<code class="language-php">
+// Database connection details
+$mysqli = mysqli_connect('localhost', 'db_user', 'db_password', 'db_name');</code>
+</pre>
+                       <!-- Alert -->
+                       <div class="alert alert-light m-1">Final notes:<br /><br />
+                       You then would visit example pages links above or below and begin future development edits and improvements from there. This simple PHP / MySQli snippet is simply shared "AS IS" in the hopes that it can be then further used as a starting base point for development.</div>
+                       <h5 class="card-title border-bottom pb-3"><i class="fa-solid fa-binoculars m-1"></i> View Examples</h5> 
+                       <!-- List -->
+                       <ul class="list-group m-1">
+                         <li class="list-group-item"><a href="slides.php?ops=add_slide" style="text-decoration: none;"><i class="fa-solid fa-add m-2"></i> add slide</a></li>
+                         <li class="list-group-item"><a href="slides.php?ops=edit_slide" style="text-decoration: none;"><i class="fa-solid fa-edit m-2"></i> edit slide</a></li>
+                         <li class="list-group-item"><a href="slides.php" style="text-decoration: none;"><i class="fa-solid fa-binoculars m-2"></i> view all slides</a></li>
+                         <li class="list-group-item"><a href="carousel.php" style="text-decoration: none;"><i class="fa-solid fa-binoculars m-2"></i> view example carousel</a></li>                                                   
+                       </ul>
+                       </div>
+                  </div>
+                </div>   
+                <!-- Card: Project Links-->
+                <div class="card  mt-2 mb-4">
+                  <div class="card-body">
+                       <h5 class="card-title border-bottom pb-3"><i class="fa-solid fa-link"></i> Project Links</h5> 
+                       <!-- List -->
+                       <ul class="list-group">
+                         <li class="list-group-item"><a href="https://github.com/ic-myXMB/Bootstrap-5-Basic_Image-Uploads_PHP_Mysql/tree/main/BS5-Basic-Carousel-Slide-Image-Upload" class="text-secondary" style="text-decoration: none;" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-github text-secondary m-2"></i> Project Github</a></li>
+                         <li class="list-group-item"><a href="#license_modal" data-bs-toggle="modal" data-bs-target="#license_Modal" class="text-secondary" style="text-decoration: none;"><i class="fa-solid fa-info-circle text-secondary m-2"></i> Project License</a></li>
+                       </ul>
+                  </div>
+                </div>
+                <!-- Modal -->
+                  <div class="modal fade" id="license_Modal" tabindex="-1" aria-labelledby="license_ModalLabel" aria-hidden="true">
+                     <div class="modal-dialog modal-dialog-scrollable">
+                          <div class="modal-content">
+                                <div class="modal-header">
+                                     <h5 class="modal-title" id="license_ModalLabel">Project License</h5>
+                                     <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body">
+                                     <!-- License -->
+                                     <p> MIT License<br /><br />
+                                         Copyright (c) 2022 ic-myXMB
+                                         <br /><br />
+                                         Permission is hereby granted, free of charge, to any person obtaining a copy
+                                         of this software and associated documentation files (the "Software"), to deal
+                                         in the Software without restriction, including without limitation the rights
+                                         to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+                                         copies of the Software, and to permit persons to whom the Software is
+                                         furnished to do so, subject to the following conditions:
+                                         <br /><br />
+                                         The above copyright notice and this permission notice shall be included in all
+                                         copies or substantial portions of the Software.
+                                         <br /><br />
+                                         THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+                                         IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+                                         FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+                                         AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+                                         LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+                                         OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+                                         SOFTWARE.
+                                     </p>
+                                </div>
+                                <div class="modal-footer">
+                                     <!-- Button -->
+                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                               </div>
+                          </div>
+                     </div>
+                  </div> <!--/. End Modal -->
+           </div> <!-- ./ End Container -->
+           <!-- Footer -->
+           <!-- Container -->
+           <div class="container">
+             <footer class="py-3 my-4">
+               <p class="text-center text-secondary">Carousel Slide Image Upload &copy; 2022 <br /><small><span class="love">Made with <i class="fa-solid fa-heart text-danger"></i> by <a class="text-primary" href="https://github.com/ic-myXMB" target="_blank" rel="noopener noreferrer" style="text-decoration: none;">ic_myXMB</a></span></small></p>
+             </footer>
+           </div> <!-- ./ End Container -->
+           <!-- Back To Top Button -->
+           <button type="button" class="btn btn-secondary btn-floating btn-lg" id="btn-back-to-top">
+                 <i class="fa-solid fa-arrow-up text-white"></i>
+           </button>              
+           <!-- Back To Top JS -->
+           <script>
+           //Get the button
+           let mybutton = document.getElementById("btn-back-to-top");
+           // When the user scrolls down 20px from the top of the document, show the button
+           window.onscroll = function () {
+             scrollFunction();
+           };
+           function scrollFunction() {
+             if (
+               document.body.scrollTop > 20 ||
+               document.documentElement.scrollTop > 20
+             ) {
+               mybutton.style.display = "block";
+             } else {
+               mybutton.style.display = "none";
+             }
+           }
+           // When the user clicks on the button, scroll to the top of the document
+           mybutton.addEventListener("click", backToTop);
+           function backToTop() {
+             document.body.scrollTop = 0;
+             document.documentElement.scrollTop = 0;
+           }
+           </script>
+           <!-- JS Files -->
+           <!-- JQuery JS -->
+           <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script> 
+           <!-- Bootstrap JS -->
+           <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
+           <!-- PrismJS JS -->
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/prism.min.js"></script>
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-sql.min.js"></script>  
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/components/prism-php.min.js"></script> 
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/plugins/show-language/prism-show-language.min.js"></script>
+           <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/9000.0.1/plugins/line-numbers/prism-line-numbers.min.js"></script>
+           <script src="https://cdn.jsdelivr.net/npm/j-prism-toolbar@1.3.0/dist/jPrismToolbar.min.js"></script>
+           <!-- Init -->
+           <script>
+           $( document ).ready(function() {
+           	$("pre").addClass("line-numbers");
+               Prism.highlightAll();
+           });
+           </script>           
+           <!-- PRE CODE Select All / Copy JS -->
+           <script type="text/javascript">
+           var sheet = document.createElement('style')
+           sheet.innerHTML = (".mycode_selectall_wrap { position: relative; }" +
+           ".mycode_selectall { position: absolute; top: 5px; right: 3px; font-family: sans-serif; color: #767E86; background: #F5F2F0; padding: 6px; border-radius: 5px 0 0 5px; display: inline-block;}" +
+           ".mycode_selectall:hover { color: #339467; cursor: pointer; }");
+           document.body.appendChild(sheet);
+           $('pre:has(code)').each(function(){
+               function selectText(element) {
+                   var doc = document
+                       , text = element
+                       , range, selection
+                   ;    
+                   if (doc.body.createTextRange) { //ms
+                       range = doc.body.createTextRange();
+                       range.moveToElementText(text);
+                       range.select();
+                   } else if (window.getSelection) { //all others
+                       selection = window.getSelection();        
+                       range = doc.createRange();
+                       range.selectNodeContents(text);
+                       selection.removeAllRanges();
+                       selection.addRange(range);
+                   }
+               }
+               var input = $('<div class="mycode_selectall text-secondary" data-bs-toggle="tooltip" data-bs-placement="left" title="Cut & Copy"><i class="fa-sharp fa-solid fa-scissors"></i> <i class="fa-sharp fa-solid fa-copy"></i></div>'),
+                   that = this;
+               input.click(function(){
+                   // selected
+                   selectText($('code',that)[0]);
+                   // copy the selected
+                   document.execCommand('copy');
+               });
+               $(this).wrap('<div class="mycode_selectall_wrap mb-4">').after(input);
+           });
+           </script> 
+           <!-- Tooltips Init -->
+           <script>
+           var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+           var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+             return new bootstrap.Tooltip(tooltipTriggerEl);
+           });
+           </script> 
+      </body>  
+ </html> 
+                  
