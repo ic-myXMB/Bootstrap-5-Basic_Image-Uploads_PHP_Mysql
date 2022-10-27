@@ -1,3 +1,4 @@
+
                 <h4><i class="fa-solid fa-code"></i> BS5 Basic Carousel Slide Image Upload</h4>
                 <?php
                 // Demo Breadcrumb 
@@ -27,10 +28,8 @@
                 	<div class="mb-3">
                 		<div class="input-group" style="width: 200px;">
                            <select name="active_status" class="form-control">
-
                              <option value="" disabled selected="selected">Select</option>
-      
-                                <?php
+                             <?php
                                     /*
                                      * Simple Carousel Slide Image Upload (BS5)
                                      * Author - ic-myXMB
@@ -55,11 +54,9 @@
 
                                      // Slide Status
                                      $slide_status = $row['slide_status'];
+                                ?>
 
-                                 ?>
-
-                             <option value="<?php echo $slide_id; ?>"<?php echo ($slide_status == '1') ? 'selected = "selected"' : '' ;?>><?php echo $slide_id; ?></option>
- 
+                             <option value="<?php echo $slide_id; ?>"<?php echo ($slide_status == '1') ? 'selected="selected"' : '' ;?>><?php echo $slide_id; ?></option>
                              <?php
                                 }
                              ?>
@@ -69,7 +66,6 @@
                         </div>
                     </div>
                 </form>
-
                 <?php
                     // IF Post Submit
                     if(isset($_POST['submit'])) {
@@ -146,7 +142,6 @@
                       </tr>  
                       <?php
                          }
-				           
                             // Delete Slide
                             // If Is Get Delete 
                             if (isset($_GET['delete'])) {
