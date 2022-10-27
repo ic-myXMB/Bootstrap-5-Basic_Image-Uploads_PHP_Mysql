@@ -22,10 +22,10 @@
                      <li class="breadcrumb-item active"><?php echo $is_current_page_icon; ?><?php echo $is_current_page; ?></li>
                 </ol>
                 <?php
-                    /*
-                     * Simple Carousel Slide Image Upload (BS5)
-                     * Author - ic-myXMB
-                     */
+                   /*
+                    * Simple Carousel Slide Image Upload (BS5)
+                    * Author - ic-myXMB
+                    */ 
 
                     // Connect to database
                     // Include db connect
@@ -113,7 +113,6 @@
 
 		                      // Redirect
 		                      header("Refresh:2; url= slides.php?ops=edit_slide&slide_id=$Slide_ID", true, 303);	                                                        
-
                             }
 
 

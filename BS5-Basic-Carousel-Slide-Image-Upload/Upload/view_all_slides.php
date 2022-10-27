@@ -21,7 +21,88 @@
                      <li class="breadcrumb-item"><?php echo $is_current_dir_icon; ?><a href="../<?php echo $is_current_dir; ?>"><?php echo $is_current_dir; ?></a></li>                   
                      <li class="breadcrumb-item active"><?php echo $is_current_page_icon; ?><?php echo $is_current_page; ?></li>
                 </ol>
-                
+
+                <!-- Form -->
+                <form action="" method="post">
+                	<div class="mb-3">
+                		<div class="input-group" style="width: 200px;">
+                           <select name="active_status" class="form-control">
+
+                             <option value="" disabled selected="selected">Select</option>
+      
+                                <?php
+                                    /*
+                                     * Simple Carousel Slide Image Upload (BS5)
+                                     * Author - ic-myXMB
+                                     */  
+
+                                     // Connect to database
+                                     // Include db connect 
+                                     include("db.php");
+
+                                     // Do DB function
+                                     doDB();
+
+                                     // Query Select
+                                     $sql = "SELECT * FROM `slides`";
+                                     $slides = mysqli_query($mysqli, $sql);
+
+                                     // While
+                                     while ($row = mysqli_fetch_assoc($slides)) {
+
+                                     // Slide ID	
+                                     $slide_id = $row['slide_id'];
+
+                                     // Slide Status
+                                     $slide_status = $row['slide_status'];
+
+                                 ?>
+
+                             <option value="<?php echo $slide_id; ?>"<?php echo ($slide_status == '1') ? 'selected = "selected"' : '' ;?>><?php echo $slide_id; ?></option>
+ 
+                             <?php
+                                }
+                             ?>
+
+                           </select>
+                             <input type="submit" class="btn btn-secondary" name="submit" value="Set Active Slide">
+                        </div>
+                    </div>
+                </form>
+
+                <?php
+                    // IF Post Submit
+                    if(isset($_POST['submit'])) {
+
+                       // If not empty Post Active status	
+                       if(!empty($_POST['active_status'])) {
+
+                       	 // Selected
+                    	 $selected = $_POST['active_status'];
+
+                         // Query Update
+                         $sql = "UPDATE `slides` SET slide_status = IF(slide_id = '$selected', 1, 0)";
+                         $result = mysqli_query($mysqli, $sql);
+
+                         // Echo Success
+                         echo '<div class="alert alert-success">Slide ID: ' . $selected.' was selected.</div>';
+
+                		 // Redirect
+                		 header("Refresh:1; url= slides.php", true, 303);
+
+                        } else {
+
+                         // Echo Please select an ID
+                         echo '<div class="alert alert-danger">Please select a slide ID.</div>';
+
+                         // Redirect
+                		 header("Refresh:1; url= slides.php", true, 303);
+
+                        }
+
+                    }
+                ?>
+
                 <!-- View All Slides Table -->
                 <div class="table-responsive">
                    <table class="table table-striped table-bordered">
@@ -37,13 +118,6 @@
                           * Simple Carousel Slide Image Upload (BS5)
                           * Author - ic-myXMB
                           */
-                         
-                         // Connect to database
-                         // Include db connect 
-                         include("db.php");
-
-                         // Do DB function
-                         doDB();
 
                          // File Slide Image Upload Directory  
                          $file_dir = "images/slides";                         
@@ -77,7 +151,7 @@
                             // If Is Get Delete 
                             if (isset($_GET['delete'])) {
 
-                             // Slide Id
+                             // Slide ID
                              $slide_id = $_GET['delete'];
 
                              // Query Delete

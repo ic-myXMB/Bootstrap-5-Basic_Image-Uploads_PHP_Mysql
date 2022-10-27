@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-           <title>Demo - BS5 Basic Carousel</title>
+           <title>Demo - Carousel</title>
            <!-- CSS Files -->
            <!-- Bootstrap CSS -->  
            <link rel="stylesheet" href="includes/bootstrap/css/bootstrap.min.css" />
@@ -28,7 +28,7 @@
            <!-- Container -->
            <div class="container mt-5">
                 <!-- Heading -->
-                <h4><i class="fa-solid fa-code"></i> Bootstrap 5 Basic Carousel Slide Image Upload</h4>
+                <h4><i class="fa-solid fa-code"></i> BS5 Basic Carousel Slide Image Upload</h4>
                 <?php
                 // Demo Breadcrumb
 
@@ -53,7 +53,7 @@
                 </ol>
 
            	 <!-- Carousel -->
-             <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+             <div id="carouselDemoFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
              	  <!-- Carousel Inner -->
                   <div class="carousel-inner">
                       <?php
@@ -80,7 +80,7 @@
                          while ($data_slide = mysqli_fetch_assoc($slides)) {
                          	
                              // Old Image
-                             $old_image = $data_slide['slide_image'];
+                             //$old_image = $data_slide['slide_image'];
 
                              // Slide ID     
                              $slide_id = $data_slide['slide_id'];
@@ -88,13 +88,22 @@
                              // Slide Image
                              $slide_image = $data_slide['slide_image'];
 
-				           // If Slide id equal to
-				           if ($slide_id === '1') {
+                             // Slide Status    
+                             $slide_status = $data_slide['slide_status'];                             
+
+				           // If Slide status equal to 1
+				           if ($slide_status === '1') {
+
 				             // is active status status
 				             $is_active = ' active';
-				           } else {
-				             // is active status
-				             $is_active = '';                    	
+
+				           } 
+				           // If Slide status equal to 0
+				           if ($slide_status === '0') {
+
+				             // is not active status
+				             $is_active = '';     
+				                            	
 				           }
 
                         ?><!-- Slide -->
@@ -105,11 +114,11 @@
                         }
                         ?>
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="prev">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselDemoFade" data-bs-slide="prev">
                          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                          <span class="visually-hidden">Previous</span>
                     </button>
-                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade" data-bs-slide="next">
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselDemoFade" data-bs-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="visually-hidden">Next</span>
                     </button>
