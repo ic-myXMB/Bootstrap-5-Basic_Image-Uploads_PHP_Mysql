@@ -25,8 +25,8 @@
 
                 <!-- Form -->
                 <form action="" method="post">
-                	<div class="mb-3">
-                        <div class="input-group" style="width: 200px;">
+                    <div class="mb-3">
+                		<div class="input-group" style="width: 200px;">
                            <select name="active_status" class="form-control">
                              <option value="" disabled selected="selected">Select</option>
                              <?php
@@ -47,13 +47,16 @@
                                      $slides = mysqli_query($mysqli, $sql);
 
                                      // While
-                                     while ($row = mysqli_fetch_assoc($slides)) {
+                                     while ($data_slide = mysqli_fetch_assoc($slides)) {
+
+                                     // Old Image
+                                     $old_image = $data_slide['slide_image'];                                     	
 
                                      // Slide ID	
-                                     $slide_id = $row['slide_id'];
+                                     $slide_id = $data_slide['slide_id'];
 
                                      // Slide Status
-                                     $slide_status = $row['slide_status'];
+                                     $slide_status = $data_slide['slide_status'];
                                 ?>
 
                              <option value="<?php echo $slide_id; ?>"<?php echo ($slide_status == '1') ? 'selected="selected"' : '' ;?>><?php echo $slide_id; ?></option>
@@ -142,6 +145,7 @@
                       </tr>  
                       <?php
                          }
+				           
                             // Delete Slide
                             // If Is Get Delete 
                             if (isset($_GET['delete'])) {
