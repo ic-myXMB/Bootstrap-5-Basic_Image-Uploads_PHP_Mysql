@@ -11,9 +11,9 @@ Tools Used for this project:
 
 * Github Desktop (Code Repository Management): https://desktop.github.com/
 
-* Bootstrap 5 (Framework): https://getbootstrap.com/
+* Bootstrap 5 (Framework): https://getbootstrap.com/ (5.30-alpha1)
 
-* Font Awesome 6 (Icons): https://fontawesome.com/
+* Font Awesome 6 (Icons): https://fontawesome.com/ (6.3.0)
 
 
 
